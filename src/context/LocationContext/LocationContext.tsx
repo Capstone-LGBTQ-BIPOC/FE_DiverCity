@@ -13,7 +13,7 @@ const LocationContextProvider = ({ children }) => {
     .then(response => response.json())
     .catch(error => console.log(error))
     .then((data) => setLocation(data));
-  })
+  },[])
 
   return (
     <LocationContext.Provider value={location}>
@@ -22,4 +22,4 @@ const LocationContextProvider = ({ children }) => {
   )
 }
 
-export default LocationContext
+export default LocationContextProvider
