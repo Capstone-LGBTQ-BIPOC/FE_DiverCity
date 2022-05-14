@@ -1,15 +1,14 @@
 import * as React from 'react';
 import CategoryCard from '../CategoryCard/CategoryCard';
 import './Categories.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fa-utensils, fa-bag-shopping } from '@fortawesome/fontawesome-free-solid'
+import { faUtensils, faBagShopping, faMusic } from '@fortawesome/free-solid-svg-icons'
 
 function Categories() {
   return (
     <section>
-      <CategoryCard icon={<FontAwesomeIcon icon='fa-solid fa-utensils' />} />
-      <CategoryCard icon={<FontAwesomeIcon icon="fa-solid fa-bag-shopping" />} />
-      <CategoryCard />
+      <CategoryCard icon={faUtensils} />
+      <CategoryCard icon={faBagShopping} />
+      <CategoryCard icon={faMusic} />
     </section>
   )
 }
