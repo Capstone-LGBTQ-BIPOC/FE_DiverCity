@@ -2,12 +2,15 @@ import * as React from 'react';
 import Categories from '../Categories/Categories';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import LocationContextProvider from '../../context/LocationContext/LocationContext';
 
 function App() {
   return(
-    <main>
-      <Categories />
-    </main>
+    <LocationContextProvider>
+      <main>
+        <Categories />
+      </main>
+    </LocationContextProvider>
   )
 }
 
