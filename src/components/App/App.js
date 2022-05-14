@@ -4,8 +4,8 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LocationContextProvider from '../../context/LocationContext/LocationContext';
 
-function App() {
-  return(
+const App = () => {
+  return (
     <LocationContextProvider>
       <main>
         <Categories />
