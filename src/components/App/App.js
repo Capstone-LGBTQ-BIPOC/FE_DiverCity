@@ -9,9 +9,6 @@ const App = () => {
     <LocationContextProvider>
       <BusinessContextProvider>
         <main>
-        <header>
-          <h1>Pick your category</h1>
-        </header>
           <Routes>
             <Route path='/' element={<Categories />} />
           </Routes>
