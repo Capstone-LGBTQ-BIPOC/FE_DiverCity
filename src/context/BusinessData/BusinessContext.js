@@ -3,7 +3,7 @@ import fetchBusinesses from "../../apiCalls";
 
 const BusinessContext = createContext([]);
 
-const BusinessContextProvider = () => {
+const BusinessContextProvider = ({children}) => {
   
   const [businesses, setBusinesses] = useState([]);
 
@@ -16,6 +16,12 @@ const BusinessContextProvider = () => {
     .then(data => setBusinesses(data.data))
     .catch(err => setError('something went wrong try again later'))
   }
+
+  return (
+    <BusinessContext.Provider value={{businesses, error, getBusinesses}}>
+      {children}
+    </BusinessContext.Provider>
+  )
 }
 
 export default BusinessContextProvider;
