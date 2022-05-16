@@ -9,6 +9,10 @@ const BusinessContextProvider = () => {
 
   const location = useContext(LocationContext)
 
+  const getBusinesses = (category) => {
+    fetchBusinesses(location.city, category)
+    .then(data => setBusinesses(data.data))
+  }
 }
 
 export default BusinessContextProvider;
