@@ -14,7 +14,9 @@ const BusinessContextProvider = ({children}) => {
 
   const getBusinesses = (category) => {
     fetchBusinesses(location.city, category)
-    .then(data => setBusinesses(data.data))
+    .then(data => {
+      setBusinesses(data.data)
+    })
     .catch(err => setError('something went wrong try again later'))
   }
 
@@ -25,4 +27,4 @@ const BusinessContextProvider = ({children}) => {
   )
 }
 
-export default BusinessContextProvider;
+export { BusinessContextProvider, BusinessContext };
