@@ -20,4 +20,4 @@ const LocationContextProvider = ({ children }) => {
   )
 }
 
-export default LocationContextProvider
+export {LocationContext, LocationContextProvider}
