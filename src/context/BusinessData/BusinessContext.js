@@ -5,13 +5,16 @@ const BusinessContext = createContext([]);
 
 const BusinessContextProvider = () => {
   
-  const [businesses, setBusinesses] = useState([])
+  const [businesses, setBusinesses] = useState([]);
+
+  const [error, setError] = useState(null);
 
   const location = useContext(LocationContext)
 
   const getBusinesses = (category) => {
     fetchBusinesses(location.city, category)
     .then(data => setBusinesses(data.data))
+    .catch(err => setError('something went wrong try again later'))
   }
 }
 
