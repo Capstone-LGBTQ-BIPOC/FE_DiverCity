@@ -19,7 +19,7 @@ const BusinessContextProvider = ({children}) => {
     .then(data => {
       setBusinesses(data.data)
     })
-    .catch(err => setError('something went wrong try again later'))
+    .catch(err => setError('Oops, something went wrong! Please try again later'))
   }
 
   return (
