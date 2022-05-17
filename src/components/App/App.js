@@ -12,7 +12,7 @@ const App = () => {
         <main>
           <Routes>
             <Route path='/' element={<Categories />} />
-            <Route path='/category' element={<Listings />}/>
+            <Route path='/:category' element={<Listings />}/>
           </Routes>
         </main>
       </BusinessContextProvider>

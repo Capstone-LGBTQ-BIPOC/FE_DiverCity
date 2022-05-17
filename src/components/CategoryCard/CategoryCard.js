@@ -10,7 +10,7 @@ function CategoryCard({ icon, type, label }) {
     <section>
       <h1>{label}</h1>
       <FontAwesomeIcon icon={icon} />
-      <NavLink to='/category'>
+      <NavLink to={`/${type}`}>
         <button onClick={() => {
           biz.getBusinesses(type)
           biz.setCategory(label)
