@@ -14,7 +14,13 @@ function Listings() {
 
   const options = subCategories.map(subCat => <option key={subCat} value={subCat}>{subCat}</option>);
 
-  const businessListings = biz.businesses.map(business => {
+  let businessListings = biz.businesses;
+
+  if (filter) {
+    businessListings = businessListings.filter(listing => listing.attributes.sub_category.includes(filter));
+  }
+
+  businessListings = businessListings.map(business => {
     return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} />
   });
 
