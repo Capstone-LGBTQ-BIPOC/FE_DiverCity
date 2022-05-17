@@ -4,7 +4,7 @@ import './BusinessCard.css';
 function BusinessCard({ name, image }) {
   return(
     <div>
-      <img src={image} alt={`Image of ${name}`}/>
+      <img src={image} alt={`${name}`}/>
       <p>{name}</p>
     </div>
   )
