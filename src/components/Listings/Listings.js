@@ -1,12 +1,9 @@
 import { useContext } from 'react';
-import { useParams } from 'react-router-dom';
 import { BusinessContext } from '../../context/BusinessData/BusinessContext';
 import BusinessCard from '../BusinessCard/BusinessCard';
 import './Listings.css';
 
 function Listings() {
-  const { category } = useParams();
-
   const biz = useContext(BusinessContext);
 
   const businessListings = biz.businesses.map(business => {
