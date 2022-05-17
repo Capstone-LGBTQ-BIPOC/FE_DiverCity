@@ -8,8 +8,14 @@ function Listings() {
 
   const [filter, setFilter] = useState('');
 
+  let subCategories = [];
+  
+  biz.businesses.forEach(business => business.attributes.sub_category.forEach(subCat => !subCategories.includes(subCat) && subCategories.push(subCat)));
+
+  const options = subCategories.map(subCat => <option key={subCat} value={subCat}>{subCat}</option>);
+
   const businessListings = biz.businesses.map(business => {
-   return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id}/>
+    return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} />
   });
 
   return(
@@ -17,7 +23,7 @@ function Listings() {
       <h2>{biz.category}</h2>
       <select value={filter} onChange={e => setFilter(e.target.value)}>
         <option value=''>Show All</option>
-        {/* {options} */}
+        {options}
       </select>
       {businessListings}
     </section>
