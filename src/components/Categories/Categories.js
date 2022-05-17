@@ -6,9 +6,7 @@ import { faUtensils, faBagShopping, faMusic } from '@fortawesome/free-solid-svg-
 function Categories() {
   return (
     <section>
-      <header>
-        <h1>Pick your category</h1>
-      </header>
+      <h2>Pick your category</h2>
       <CategoryCard icon={faUtensils} type='food' label='Food & Drink'/>
       <CategoryCard icon={faBagShopping} type='shopping' label='Shopping' />
       <CategoryCard icon={faMusic} type='entertainment' label='Arts & Entertainment' />

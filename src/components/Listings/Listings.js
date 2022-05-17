@@ -12,9 +12,7 @@ function Listings() {
 
   return(
     <section>
-      <header>
-        <h2>{biz.category}</h2>
-      </header>
+      <h2>{biz.category}</h2>
       {businessListings}
     </section>
   )
