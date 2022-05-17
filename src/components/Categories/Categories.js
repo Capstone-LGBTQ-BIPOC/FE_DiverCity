@@ -7,7 +7,7 @@ function Categories() {
   return (
     <section>
       <header>
-            <h1>Pick your category</h1>
+        <h1>Pick your category</h1>
       </header>
       <CategoryCard icon={faUtensils} type='food' label='Food & Drink'/>
       <CategoryCard icon={faBagShopping} type='shopping' label='Shopping' />
