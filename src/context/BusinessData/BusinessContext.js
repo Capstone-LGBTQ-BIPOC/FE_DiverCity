@@ -8,6 +8,8 @@ const BusinessContextProvider = ({children}) => {
   
   const [businesses, setBusinesses] = useState([]);
 
+  const [category, setCategory] = useState('')
+
   const [error, setError] = useState(null);
 
   const location = useContext(LocationContext)
@@ -21,7 +23,7 @@ const BusinessContextProvider = ({children}) => {
   }
 
   return (
-    <BusinessContext.Provider value={{businesses, error, getBusinesses}}>
+    <BusinessContext.Provider value={{businesses, error, getBusinesses, setCategory, category}}>
       {children}
     </BusinessContext.Provider>
   )
