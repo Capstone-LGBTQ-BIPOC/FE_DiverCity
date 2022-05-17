@@ -10,6 +10,9 @@ const App = () => {
     <LocationContextProvider>
       <BusinessContextProvider>
         <main>
+          <header>
+            <h1>DiverCity: Inclusive Business Guide</h1>
+          </header>
           <Routes>
             <Route path='/' element={<Categories />} />
             <Route path='/:category' element={<Listings />}/>
