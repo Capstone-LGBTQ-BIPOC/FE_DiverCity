@@ -1,5 +1,6 @@
 import { useContext, useState } from 'react';
 import { BusinessContext } from '../../context/BusinessData/BusinessContext';
+import  ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
 import './Listings.css';
 
@@ -24,6 +25,8 @@ function Listings() {
     return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} />
   });
 
+  console.log(biz.isLoading)
+
   return(
     <section>
       <h2>{biz.category}</h2>
@@ -31,6 +34,7 @@ function Listings() {
         <option value=''>Show All</option>
         {options}
       </select>
+      {biz.isLoading && <ReactLoading type='spinningBubbles' color='#000' width={'20%'} height={'20%'} />}
       {businessListings}
     </section>
   )
