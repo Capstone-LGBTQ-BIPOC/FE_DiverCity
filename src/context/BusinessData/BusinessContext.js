@@ -17,12 +17,11 @@ const BusinessContextProvider = ({children}) => {
   const location = useContext(LocationContext)
 
   const getBusinesses = (category) => {
+    setIsLoading(true);
     fetchBusinesses(location.city, category)
-    .then(data => {
-      setBusinesses(data.data)
-    })
-    .catch(err => setError('Oops, something went wrong! Please try again later.'))
-    .finally(() => setIsLoading(false))
+      .then(data => setBusinesses(data.data))
+      .catch(err => setError('Oops, something went wrong! Please try again later.'))
+      .finally(() => setIsLoading(false))
   }
 
   return (
