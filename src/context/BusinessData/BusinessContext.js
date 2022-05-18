@@ -12,6 +12,8 @@ const BusinessContextProvider = ({children}) => {
 
   const [error, setError] = useState(null);
 
+  const [isLoading, setIsLoading] = useState(true);
+
   const location = useContext(LocationContext)
 
   const getBusinesses = (category) => {
@@ -20,10 +22,11 @@ const BusinessContextProvider = ({children}) => {
       setBusinesses(data.data)
     })
     .catch(err => setError('Oops, something went wrong! Please try again later.'))
+    .finally(() => setIsLoading(false))
   }
 
   return (
-    <BusinessContext.Provider value={{businesses, error, getBusinesses, setCategory, category}}>
+    <BusinessContext.Provider value={{businesses, error, getBusinesses, setCategory, category, isLoading}}>
       {children}
     </BusinessContext.Provider>
   )
