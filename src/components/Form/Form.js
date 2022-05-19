@@ -27,8 +27,8 @@ const Form = props => {
       <form>
         <input
           type='text'
-          placeholder='Prompt'
-          name='selectedLocation'
+          placeholder='Enter a City'
+          name='typed'
           value={typed}
           onChange={event => {
             location.setSelectedLocation(event.target.value)
