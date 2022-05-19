@@ -4,7 +4,7 @@ import  ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
 import './Listings.css';
 
-function Listings() {
+const Listings = () => {
   const biz = useContext(BusinessContext);
 
   const [filter, setFilter] = useState('');
