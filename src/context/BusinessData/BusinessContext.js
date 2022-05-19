@@ -18,6 +18,7 @@ const BusinessContextProvider = ({children}) => {
     fetchBusinesses(location.city, category)
     .then(data => {
       setBusinesses(data.data)
+      console.log(data.data)
     })
     .catch(err => setError('Oops, something went wrong! Please try again later.'))
   }
