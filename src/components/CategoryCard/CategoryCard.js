@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BusinessContext } from '../../context/BusinessData/BusinessContext';
 import { NavLink } from 'react-router-dom';
 
-function CategoryCard({ icon, type, label }) {
+const CategoryCard = ({ icon, type, label }) => {
   const biz = useContext(BusinessContext);
   
   return (
