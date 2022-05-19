@@ -2,7 +2,7 @@ import React from 'react'
 import { useContext, useState } from 'react'
 import { LocationContext } from '../../context/LocationContext/LocationContext'
 
-const Form = props => {
+const Form = () => {
   const location = useContext(LocationContext)
 
   const [typed, setTyped] = useState('')
@@ -33,7 +33,6 @@ const Form = props => {
           onChange={event => {
             location.setSelectedLocation(event.target.value)
             setTyped(event.target.value)
-            console.log(event.target.value)
           }}
         />
 

@@ -3,7 +3,7 @@ import CategoryCard from '../CategoryCard/CategoryCard';
 import './Categories.css';
 import { faUtensils, faBagShopping, faMusic } from '@fortawesome/free-solid-svg-icons'
 
-function Categories() {
+const Categories = () => {
   return (
     <section>
       <h2>Pick your category</h2>
