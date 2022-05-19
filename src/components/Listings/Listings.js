@@ -31,8 +31,6 @@ function Listings() {
     return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} />
   });
 
-  console.log(biz.isLoading)
-
   return(
     <section>
       <h2>{biz.category}</h2>
