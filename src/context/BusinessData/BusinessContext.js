@@ -25,7 +25,7 @@ const BusinessContextProvider = ({children}) => {
   }
 
   return (
-    <BusinessContext.Provider value={{businesses, error, getBusinesses, setCategory, category, isLoading}}>
+    <BusinessContext.Provider value={{businesses, error, getBusinesses, setCategory, category, isLoading, setBusinesses}}>
       {children}
     </BusinessContext.Provider>
   )

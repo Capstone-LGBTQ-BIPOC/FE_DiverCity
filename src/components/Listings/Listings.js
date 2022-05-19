@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { BusinessContext } from '../../context/BusinessData/BusinessContext';
 import  ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
@@ -8,6 +8,12 @@ function Listings() {
   const biz = useContext(BusinessContext);
 
   const [filter, setFilter] = useState('');
+
+  useEffect(() => {
+    return () => {
+      biz.setBusinesses([])
+    }
+  }, [])
 
   let subCategories = [];
   
