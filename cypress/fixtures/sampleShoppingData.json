@@ -6,8 +6,8 @@
       "attributes": {
         "name": "Stanley Marketplace",
         "sub_category": [
-            "Food Court",
-            "Shopping Centers"
+          "Food Court",
+          "Shopping Centers"
         ],
         "address": {
           "city": "Aurora",
@@ -24,7 +24,7 @@
       "attributes": {
         "name": "Cherry Creek Shopping Center",
         "sub_category": [
-            "Shopping Centers"
+          "Shopping Centers"
         ],
         "address": {
           "city": "Denver",
