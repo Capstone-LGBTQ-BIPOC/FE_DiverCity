@@ -10,10 +10,13 @@ const BusinessContextProvider = ({ children }) => {
   const [category, setCategory] = useState('')
 
   const [error, setError] = useState(null)
+  
+  const [isLoading, setIsLoading] = useState(true);
 
   const locationContext = useContext(LocationContext)
 
   const getBusinesses = category => {
+    setIsLoading(true);
     let searchLocation
     if (locationContext.selectedLocation) {
        searchLocation = locationContext.selectedLocation
@@ -21,18 +24,19 @@ const BusinessContextProvider = ({ children }) => {
        searchLocation = locationContext.location.city
     }
     fetchBusinesses(searchLocation, category)
+    
       .then(data => {
         setBusinesses(data.data)
         console.log(data.data)
       })
       .catch(err =>
         setError('Oops, something went wrong! Please try again later.')
-      )
+      ).finally(() => setIsLoading(false))
   }
 
   return (
     <BusinessContext.Provider
-      value={{ businesses, error, getBusinesses, setCategory, category }}
+      value={{ businesses, error, getBusinesses, setCategory, category, isLoading, setBusinesses }}
     >
       {children}
     </BusinessContext.Provider>
