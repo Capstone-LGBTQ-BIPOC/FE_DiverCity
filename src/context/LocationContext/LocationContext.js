@@ -6,7 +6,6 @@ const LocationContext = createContext(null);
 const LocationContextProvider = ({ children }) => {
 
   const [location, setLocation] = useState('')
-  const [userLocation, setUserLocation] = useState('')
   const [selectedLocation, setSelectedLocation] = useState('')
 
   useEffect(() => {
