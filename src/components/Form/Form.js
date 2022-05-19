@@ -22,10 +22,10 @@ const Form = () => {
   return (
     <div>
       {!location.selectedLocation && (
-        <h2>Youre currently searching in {location.location.city}</h2>
+        <h2>You're currently searching in {location.location.city}</h2>
       )}
       {location.selectedLocation && (
-        <h2>Youre currently searching in {location.selectedLocation}</h2>
+        <h2>You're currently searching in {location.selectedLocation}</h2>
       )}
       <form>
         <input
