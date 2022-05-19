@@ -16,7 +16,7 @@ const App = () => {
           </header>
           <Form />
           <Routes>
-            <Route path='/' element={<Categories />} />
+            <Route exact path='/' element={<Categories />} />
             <Route path='/:category' element={<Listings />} />
           </Routes>
         </main>
