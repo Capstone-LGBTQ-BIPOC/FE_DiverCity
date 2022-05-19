@@ -39,6 +39,9 @@ const Listings = () => {
         {options}
       </select>
       {biz.isLoading && <ReactLoading type='spinningBubbles' color='#000' width={'20%'} height={'20%'} />}
+      {biz.error && (
+        <h3>{biz.error}</h3>
+      )}
       {businessListings}
     </section>
   )
