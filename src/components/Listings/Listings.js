@@ -1,5 +1,6 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { BusinessContext } from '../../context/BusinessData/BusinessContext';
+import  ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
 import './Listings.css';
 
@@ -8,11 +9,17 @@ function Listings() {
 
   const [filter, setFilter] = useState('');
 
+  useEffect(() => {
+    return () => {
+      biz.setBusinesses([])
+    }
+  }, [])
+
   let subCategories = [];
   
   biz.businesses.forEach(business => business.attributes.sub_category.forEach(subCat => !subCategories.includes(subCat) && subCategories.push(subCat)));
 
-  const options = subCategories.map(subCat => <option key={subCat} value={subCat}>{subCat}</option>);
+  const options = subCategories.sort().map(subCat => <option key={subCat} value={subCat}>{subCat}</option>);
 
   let businessListings = biz.businesses;
 
@@ -31,6 +38,7 @@ function Listings() {
         <option value=''>Show All</option>
         {options}
       </select>
+      {biz.isLoading && <ReactLoading type='spinningBubbles' color='#000' width={'20%'} height={'20%'} />}
       {businessListings}
     </section>
   )
