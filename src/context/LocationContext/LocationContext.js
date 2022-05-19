@@ -14,9 +14,6 @@ const LocationContextProvider = ({ children }) => {
       .then((data) => setLocation(data));
   }, [])
   
-  // useEffect(() => { 
-  //   setLocation(selectedLocation)
-  // }, [selectedLocation])
 
   return (
     <LocationContext.Provider value={{location, selectedLocation, setSelectedLocation}}>
