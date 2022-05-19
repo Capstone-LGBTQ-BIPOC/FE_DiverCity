@@ -24,14 +24,18 @@ const BusinessContextProvider = ({ children }) => {
        searchLocation = locationContext.location.city
     }
     fetchBusinesses(searchLocation, category)
-    
       .then(data => {
         setBusinesses(data.data)
         console.log(data.data)
       })
       .catch(err =>
         setError('Oops, something went wrong! Please try again later.')
-      ).finally(() => setIsLoading(false))
+      ).finally(() => {
+        if(businesses.length === 0) {
+          setError('No results for your search. Please try a new search.')
+        }
+        setIsLoading(false)
+      })
   }
 
   return (
