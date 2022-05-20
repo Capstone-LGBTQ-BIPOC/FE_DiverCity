@@ -1,7 +1,7 @@
 import React from 'react';
 import './BusinessCard.css';
 
-function BusinessCard({ name, image }) {
+const BusinessCard = ({ name, image }) => {
   return(
     <div>
       <img src={image} alt={`${name}`}/>
