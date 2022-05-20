@@ -28,7 +28,7 @@ const Listings = () => {
   }
 
   businessListings = businessListings.map(business => {
-    return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} />
+    return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} id={business.id} />
   });
 
   return(
