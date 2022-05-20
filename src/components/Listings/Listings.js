@@ -13,6 +13,11 @@ const Listings = () => {
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
+    biz.getBusinesses(category)
+    biz.setCategory(category)
+  }, [])
+
+  useEffect(() => {
     return () => {
       biz.setBusinesses([])
     }
