@@ -17,17 +17,15 @@ const BusinessContextProvider = ({ children }) => {
 
   const getBusinesses = category => {
     setIsLoading(true);
-    let searchLocation
+    let searchLocation = locationContext.location.city;
     if (locationContext.selectedLocation) {
        searchLocation = locationContext.selectedLocation
-    } else {
-       searchLocation = locationContext.location.city
     }
     fetchBusinesses(searchLocation, category)
-    
       .then(data => {
         setBusinesses(data.data)
-        console.log(data.data)
+        console.log('returned data:', data.data)
+        console.log('location: ', searchLocation, 'category: ', category)
       })
       .catch(err =>
         setError('Oops, something went wrong! Please try again later.')

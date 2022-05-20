@@ -7,6 +7,7 @@ import './Listings.css';
 
 const Listings = () => {
   let { category } = useParams();
+  console.log(category);
 
   const biz = useContext(BusinessContext);
 
@@ -16,11 +17,11 @@ const Listings = () => {
     biz.getBusinesses(category)
   }, [])
 
-  useEffect(() => {
-    return () => {
-      biz.setBusinesses([])
-    }
-  }, [])
+  // useEffect(() => {
+  //   return () => {
+  //     biz.setBusinesses([])
+  //   }
+  // }, [])
 
   let subCategories = [];
   
