@@ -11,10 +11,7 @@ const CategoryCard = ({ icon, type, label }) => {
       <h1>{label}</h1>
       <FontAwesomeIcon icon={icon} />
       <NavLink to={`/${type}`}>
-        <button onClick={() => {
-          biz.getBusinesses(type)
-          biz.setCategory(label)
-        }}>View All</button>
+        <button>View All</button>
       </NavLink>
     </section>
   )
