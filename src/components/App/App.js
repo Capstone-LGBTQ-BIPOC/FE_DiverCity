@@ -19,7 +19,7 @@ const App = () => {
           <Routes>
             <Route exact path='/' element={<Categories />} />
             <Route path='/:category' element={<Listings />} />
-            <Route path='/:id' element={<Modal />} />
+            <Route path='/biz/:id' element={<Modal />} />
           </Routes>
         </main>
       </BusinessContextProvider>
