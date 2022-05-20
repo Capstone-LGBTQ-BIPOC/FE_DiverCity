@@ -14,7 +14,6 @@ const Listings = () => {
 
   useEffect(() => {
     biz.getBusinesses(category)
-    biz.setCategory(category)
   }, [])
 
   useEffect(() => {
