@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom'
 function Nav({ icon, type, label}) {
 	const biz = useContext(BusinessContext);
 
-
+console.log(label, 'label')
 	return (
 		<nav className='navigation'>
 			<div className='nav-buttons'>
@@ -18,18 +18,20 @@ function Nav({ icon, type, label}) {
 				<NavLink to='/food'>
 					<button onClick={() => {
 						biz.getBusinesses('food')
-						// biz.setCategory(label)
+						biz.setCategory('Food & Drink')
 					}}>Food & Drink</button>
 				</NavLink>
 				<NavLink to='/shopping'>
 				<button onClick={() => {
 					biz.getBusinesses('shopping')
+          biz.setCategory('Shopping')
 				}}>Shopping</button>
 				</NavLink>
 				<NavLink to='/entertainment'>
 				<button onClick={() => {
 					biz.getBusinesses('entertainment')
-				}}>Entertainment & Arts</button>
+          biz.setCategory('Arts & Entertainment')
+				}}>Arts & Entertainment</button>
 				</NavLink>
 			</div>
 		</nav>

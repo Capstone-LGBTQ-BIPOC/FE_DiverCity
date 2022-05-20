@@ -2,6 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import { BusinessContext } from '../../context/BusinessData/BusinessContext';
 import  ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
+import Nav from '../Nav/Nav';
 import './Listings.css';
 
 const Listings = () => {
@@ -16,7 +17,7 @@ const Listings = () => {
   }, [])
 
   let subCategories = [];
-  
+
   biz.businesses.forEach(business => business.attributes.sub_category.forEach(subCat => !subCategories.includes(subCat) && subCategories.push(subCat)));
 
   const options = subCategories.sort().map(subCat => <option key={subCat} value={subCat}>{subCat}</option>);
@@ -34,6 +35,7 @@ const Listings = () => {
   return(
     <section>
       <h2>{biz.category}</h2>
+      <Nav />
       <select value={filter} onChange={e => setFilter(e.target.value)}>
         <option value=''>Show All</option>
         {options}
