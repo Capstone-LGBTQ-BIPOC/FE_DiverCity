@@ -4,7 +4,7 @@ const fetchBusinesses = (location, category) => {
 }
 
 const fetchBusiness = id => {
-  return fetch(`https://immense-falls-83363.herokuapp.com/api/v1/businesses?id=${id}`)
+  return fetch(`https://immense-falls-83363.herokuapp.com/api/v1/businesses/${id}`)
     .then(response => response.json())
 }
 
