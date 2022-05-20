@@ -7,7 +7,7 @@ const BusinessCard = ({ name, image, id }) => {
     <div>
       <img src={image} alt={`${name}`}/>
       <p>{name}</p>
-      <Link to={`/${id}`}>
+      <Link to={`/biz/${id}`}>
         <button>Learn More</button>
       </Link>
     </div>
