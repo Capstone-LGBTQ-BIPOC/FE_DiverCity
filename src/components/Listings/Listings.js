@@ -3,9 +3,11 @@ import { BusinessContext } from '../../context/BusinessData/BusinessContext';
 import  ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
 import './Listings.css';
+import { faBiohazard } from '@fortawesome/free-solid-svg-icons';
 
 const Listings = () => {
   const biz = useContext(BusinessContext);
+  let error = '';
 
   const [filter, setFilter] = useState('');
 
@@ -27,9 +29,14 @@ const Listings = () => {
     businessListings = businessListings.filter(listing => listing.attributes.sub_category.includes(filter));
   }
 
+  if(biz.error && !biz.businesses.length) {
+    error = <h3>{biz.error}</h3> 
+  }
+
   businessListings = businessListings.map(business => {
     return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} />
   });
+
 
   return(
     <section>
@@ -39,9 +46,7 @@ const Listings = () => {
         {options}
       </select>
       {biz.isLoading && <ReactLoading type='spinningBubbles' color='#000' width={'20%'} height={'20%'} />}
-      {biz.error && (
-        <h3>{biz.error}</h3>
-      )}
+      {error}
       {businessListings}
     </section>
   )
