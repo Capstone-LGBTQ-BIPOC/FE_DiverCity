@@ -11,10 +11,10 @@ const CategoryCard = ({ icon, type, label }) => {
       <h1>{label}</h1>
       <FontAwesomeIcon icon={icon} />
       <NavLink to={`/${type}`}>
-        <button>View All</button>
+        <button onClick={() => biz.setCategory(label)}>View All</button>
       </NavLink>
     </section>
   )
 }
 
-export default CategoryCard
+export default CategoryCard;
