@@ -1,9 +1,7 @@
 import { useContext } from 'react'
 import './Nav.css'
-import { BusinessContext } from '../../context/BusinessData/BusinessContext';
+import { BusinessContext } from '../../context/BusinessData/BusinessContext'
 import { NavLink } from 'react-router-dom'
-
-// const Nav = () => {
 
 function Nav({ icon, type, label}) {
 	const biz = useContext(BusinessContext);
