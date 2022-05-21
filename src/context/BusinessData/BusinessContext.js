@@ -1,6 +1,6 @@
-import { createContext, useState, useContext } from 'react'
-import fetchBusinesses from '../../apiCalls'
-import { LocationContext } from '../LocationContext/LocationContext'
+import { createContext, useState, useContext } from "react";
+import { fetchBusinesses } from "../../apiCalls";
+import { LocationContext } from "../LocationContext/LocationContext";
 
 const BusinessContext = createContext([])
 
@@ -15,30 +15,29 @@ const BusinessContextProvider = ({ children }) => {
 
   const locationContext = useContext(LocationContext)
 
-  const getBusinesses = async (category) => {
+  const getBusinesses = mainCategory => {
     setError('');
-    setIsLoading(true);
-    let searchLocation
-    if (locationContext.selectedLocation) {
-       searchLocation = locationContext.selectedLocation
-    } else {
-       searchLocation = locationContext.location.city
-    }
-    fetchBusinesses(searchLocation, category)
-      .then(data => {
-        
-        setBusinesses(data.data)
-        if(!businesses.length) {
-          console.log(error)
-          setError('No results for your search. Please check your spelling and try a new search.')}
-      })
-      .catch(err => {
-        setError('Oops, something went wrong! Please try again later.')
+    if (!category.toLowerCase().includes(mainCategory)) {
+      setBusinesses([]);
+      setIsLoading(true);
+      let searchLocation
+      if (locationContext.selectedLocation) {
+         searchLocation = locationContext.selectedLocation
+      } else {
+         searchLocation = locationContext.location.city
       }
-        ).finally(() => {
-          
-          setIsLoading(false)
-      })
+      fetchBusinesses(searchLocation, mainCategory)
+        .then(data => {
+          setBusinesses(data.data)
+          if(!businesses.length) {
+            console.log(error)
+            setError('No results for your search. Please check your spelling and try a new search.')
+          }
+        })
+        .catch(err =>
+          setError('Oops, something went wrong! Please try again later.')
+        ).finally(() => setIsLoading(false))
+    }
   }
 
   return (

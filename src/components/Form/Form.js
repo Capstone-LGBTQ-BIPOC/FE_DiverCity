@@ -7,8 +7,11 @@ const Form = () => {
 
   const [typed, setTyped] = useState('')
 
+  const [submittedLocation, setSubmittedLocation] = useState()
+
   const submitLocation = event => {
     event.preventDefault()
+    location.setSelectedLocation(submittedLocation)
     clearInputs()
   }
 
@@ -19,10 +22,10 @@ const Form = () => {
   return (
     <div>
       {!location.selectedLocation && (
-        <h2>Youre currently searching in {location.location.city}</h2>
+        <h2>You're currently searching in {location.location.city}</h2>
       )}
       {location.selectedLocation && (
-        <h2>Youre currently searching in {location.selectedLocation}</h2>
+        <h2>You're currently searching in {location.selectedLocation}</h2>
       )}
       <form>
         <input
@@ -31,14 +34,14 @@ const Form = () => {
           name='typed'
           value={typed}
           onChange={event => {
-            location.setSelectedLocation(event.target.value)
             setTyped(event.target.value)
+            setSubmittedLocation(event.target.value)
           }}
         />
 
         <button
           onClick={submitLocation}
-          disabled={!location.selectedLocation}
+          disabled={!typed}
           className='submit-button'
         >
           SUBMIT
