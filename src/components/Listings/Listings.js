@@ -10,12 +10,13 @@ const Listings = () => {
   console.log(category);
 
   const biz = useContext(BusinessContext);
+  let error = '';
 
   const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    biz.getBusinesses(category)
-  }, [])
+  // useEffect(() => {
+  //   biz.getBusinesses(category)
+  // }, [])
 
   // useEffect(() => {
   //   return () => {
@@ -35,9 +36,14 @@ const Listings = () => {
     businessListings = businessListings.filter(listing => listing.attributes.sub_category.includes(filter));
   }
 
+  if(!biz.businesses.length && biz.error) {
+    error = <h3>{biz.error}</h3> 
+  }
+
   businessListings = businessListings.map(business => {
-    return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} />
+    return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} id={business.id} />
   });
+
 
   return(
     <section>
@@ -47,6 +53,7 @@ const Listings = () => {
         {options}
       </select>
       {biz.isLoading && <ReactLoading type='spinningBubbles' color='#000' width={'20%'} height={'20%'} />}
+      {error}
       {businessListings}
     </section>
   )
