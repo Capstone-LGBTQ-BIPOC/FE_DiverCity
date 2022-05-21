@@ -9,12 +9,6 @@ const Listings = () => {
 
   const [filter, setFilter] = useState('');
 
-  useEffect(() => {
-    return () => {
-      biz.setBusinesses([])
-    }
-  }, [])
-
   let subCategories = [];
   
   biz.businesses.forEach(business => business.attributes.sub_category.forEach(subCat => !subCategories.includes(subCat) && subCategories.push(subCat)));
