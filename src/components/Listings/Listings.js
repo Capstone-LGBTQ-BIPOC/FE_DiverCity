@@ -20,7 +20,7 @@ const Listings = () => {
     if (locationContext.location.city) {
       biz.getBusinesses(category)
     }
-  }, [locationContext.location.city])
+  }, [biz.searchLocation])
 
   let subCategories = [];
   
