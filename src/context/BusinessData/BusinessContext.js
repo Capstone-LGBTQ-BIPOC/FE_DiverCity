@@ -26,14 +26,17 @@ const BusinessContextProvider = ({ children }) => {
     }
     fetchBusinesses(searchLocation, category)
       .then(data => {
+        
         setBusinesses(data.data)
+        if(!businesses.length) {
+          console.log(error)
+          setError('No results for your search. Please check your spelling and try a new search.')}
       })
-      .catch(err =>
+      .catch(err => {
         setError('Oops, something went wrong! Please try again later.')
+      }
         ).finally(() => {
-          if(!businesses.length && error) {
-            console.log(error)
-            setError('No results for your search. Please try a new search.')}
+          
           setIsLoading(false)
       })
   }
