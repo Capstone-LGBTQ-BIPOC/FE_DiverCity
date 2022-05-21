@@ -20,7 +20,11 @@ const BookmarkContextProvider = ({ children }) => {
   }
 
   return (
-    
+    <BookmarkContext.Provider
+      value={{bookmarked, updateBookmark}}
+    >
+      {children}
+    </BookmarkContext.Provider>
   )
 }
 
