@@ -30,6 +30,7 @@ console.log(label, 'label')
 					biz.getBusinesses('entertainment')
           biz.setCategory('Arts & Entertainment')
 				}}>Arts & Entertainment</button>
+        <button>Favorites</button>
 				</NavLink>
 			</div>
 		</nav>
