@@ -4,7 +4,7 @@ import Modal from '../Modal/Modal'
 import './App.css'
 import { LocationContextProvider } from '../../context/LocationContext/LocationContext'
 import { BusinessContextProvider } from '../../context/BusinessData/BusinessContext'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, NavLink } from 'react-router-dom'
 import Form from '../Form/Form'
 
 const App = () => {
@@ -13,7 +13,9 @@ const App = () => {
       <BusinessContextProvider>
         <main>
           <header>
-            <h1>DiverCity: Inclusive Business Guide</h1>
+            <NavLink to='/'>
+              <h1>DiverCity: Inclusive Business Guide</h1>
+            </NavLink>
           </header>
           <Form />
           <Routes>
