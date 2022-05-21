@@ -15,14 +15,15 @@ const BusinessContextProvider = ({ children }) => {
 
   const locationContext = useContext(LocationContext)
 
+  let searchLocation = locationContext.location.city;
+  if (locationContext.selectedLocation) {
+    searchLocation = locationContext.selectedLocation
+  }
+
   const getBusinesses = mainCategory => {
     setError('');
     setBusinesses([]);
     setIsLoading(true);
-    let searchLocation = locationContext.location.city;
-    if (locationContext.selectedLocation) {
-        searchLocation = locationContext.selectedLocation
-    }
     fetchBusinesses(searchLocation, mainCategory)
       .then(data => {
         setBusinesses(data.data)
@@ -37,7 +38,7 @@ const BusinessContextProvider = ({ children }) => {
 
   return (
     <BusinessContext.Provider
-      value={{ businesses, error, getBusinesses, setCategory, category, isLoading, setBusinesses }}
+      value={{ businesses, error, getBusinesses, setCategory, category, isLoading, setBusinesses, searchLocation }}
     >
       {children}
     </BusinessContext.Provider>
