@@ -15,7 +15,7 @@ const BusinessContextProvider = ({ children }) => {
 
   const locationContext = useContext(LocationContext)
 
-  const getBusinesses = category => {
+  const getBusinesses = async (category) => {
     setError('');
     setIsLoading(true);
     let searchLocation
@@ -27,12 +27,14 @@ const BusinessContextProvider = ({ children }) => {
     fetchBusinesses(searchLocation, category)
       .then(data => {
         setBusinesses(data.data)
-        .then(() => !businesses.length && setError('No results for your search. Please try a new search.'))
       })
       .catch(err =>
         setError('Oops, something went wrong! Please try again later.')
-      ).finally(() => {
-        setIsLoading(false)
+        ).finally(() => {
+          if(!businesses.length && error) {
+            console.log(error)
+            setError('No results for your search. Please try a new search.')}
+          setIsLoading(false)
       })
   }
 
