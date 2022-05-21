@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
-import { BusinessContext } from '../../context/BusinessData/BusinessContext';
-import { LocationContext } from '../../context/LocationContext/LocationContext';
+import { BusinessContext } from '../../contexts/BusinessContext';
+import { LocationContext } from '../../contexts/LocationContext';
 import ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
 import { useParams } from 'react-router-dom';

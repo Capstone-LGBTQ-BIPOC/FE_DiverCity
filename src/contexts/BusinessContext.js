@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from "react";
-import { fetchBusinesses } from "../../apiCalls";
-import { LocationContext } from "../LocationContext/LocationContext";
+import { fetchBusinesses } from "../apiCalls";
+import { LocationContext } from "./LocationContext";
 
 const BusinessContext = createContext([])
 
