@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { fetchBusiness } from '../../apiCalls';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 const Modal = () => {
   const { id } = useParams();
+  let navigate = useNavigate();
 
   const [business, setBusiness] = useState(null);
   const [error, setError] = useState(null);
@@ -18,6 +19,7 @@ const Modal = () => {
 
   return (
     <div>
+      <button onClick={() => navigate(-1)}>Go Back</button>
       {error && <p>{error}</p>}
       {business && (<>
         <h2>{business.name}</h2>
