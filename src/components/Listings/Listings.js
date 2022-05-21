@@ -14,15 +14,9 @@ const Listings = () => {
 
   const [filter, setFilter] = useState('');
 
-  // useEffect(() => {
-  //   biz.getBusinesses(category)
-  // }, [])
-
-  // useEffect(() => {
-  //   return () => {
-  //     biz.setBusinesses([])
-  //   }
-  // }, [])
+  useEffect(() => {
+    biz.getBusinesses(category)
+  }, [])
 
   let subCategories = [];
   
