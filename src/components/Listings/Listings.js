@@ -29,7 +29,7 @@ const Listings = () => {
     businessListings = businessListings.filter(listing => listing.attributes.sub_category.includes(filter));
   }
 
-  if(biz.error && !biz.businesses.length) {
+  if(!biz.businesses.length || biz.error) {
     error = <h3>{biz.error}</h3> 
   }
 
