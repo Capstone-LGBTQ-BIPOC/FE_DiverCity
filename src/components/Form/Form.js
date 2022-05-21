@@ -51,6 +51,7 @@ const Form = () => {
             event.preventDefault()
             location.setSelectedLocation('')
           }}
+          className='curr-location-button'
         >
           Use Current Location
         </button>
