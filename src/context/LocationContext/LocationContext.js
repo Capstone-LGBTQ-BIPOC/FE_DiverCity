@@ -12,8 +12,7 @@ const LocationContextProvider = ({ children }) => {
     getGeo()
       .catch(error => console.log(error))
       .then((data) => setLocation(data));
-  }, [])
-  
+  },[])
 
   return (
     <LocationContext.Provider value={{location, selectedLocation, setSelectedLocation}}>
