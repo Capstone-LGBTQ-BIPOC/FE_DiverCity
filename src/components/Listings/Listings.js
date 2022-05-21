@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect } from 'react';
 import { BusinessContext } from '../../context/BusinessData/BusinessContext';
+import { LocationContext } from '../../context/LocationContext/LocationContext';
 import ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
 import { useParams } from 'react-router-dom';
@@ -10,13 +11,16 @@ const Listings = () => {
   console.log(category);
 
   const biz = useContext(BusinessContext);
+  const locationContext = useContext(LocationContext);
   let error = '';
 
   const [filter, setFilter] = useState('');
 
   useEffect(() => {
-    biz.getBusinesses(category)
-  }, [])
+    if (locationContext.location.city) {
+      biz.getBusinesses(category)
+    }
+  }, [locationContext.location.city])
 
   let subCategories = [];
   
