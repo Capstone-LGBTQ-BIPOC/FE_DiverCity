@@ -15,23 +15,25 @@ const BusinessContextProvider = ({ children }) => {
 
   const locationContext = useContext(LocationContext)
 
-  const getBusinesses = category => {
-    setIsLoading(true);
-    let searchLocation
-    if (locationContext.selectedLocation) {
-       searchLocation = locationContext.selectedLocation
-    } else {
-       searchLocation = locationContext.location.city
+  const getBusinesses = mainCategory => {
+    if (!category.toLowerCase().includes(mainCategory)) {
+      setBusinesses([]);
+      setIsLoading(true);
+      let searchLocation
+      if (locationContext.selectedLocation) {
+         searchLocation = locationContext.selectedLocation
+      } else {
+         searchLocation = locationContext.location.city
+      }
+      fetchBusinesses(searchLocation, mainCategory)
+        .then(data => {
+          setBusinesses(data.data)
+          console.log(data.data)
+        })
+        .catch(err =>
+          setError('Oops, something went wrong! Please try again later.')
+        ).finally(() => setIsLoading(false))
     }
-    fetchBusinesses(searchLocation, category)
-    
-      .then(data => {
-        setBusinesses(data.data)
-        console.log(data.data)
-      })
-      .catch(err =>
-        setError('Oops, something went wrong! Please try again later.')
-      ).finally(() => setIsLoading(false))
   }
 
   return (
