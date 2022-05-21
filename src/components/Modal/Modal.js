@@ -24,8 +24,10 @@ const Modal = () => {
       {business && (<>
         <h2>{business.name}</h2>
         <img src={business.image} />
+        <h3>{business.category}</h3>
         <h3>Location: {business.location}</h3>
         <h3>Contact: {business.phone}</h3>
+        <a href={business.url} target='_blank'>Visit Website</a>
         </>)}
     </div>
   )
