@@ -15,10 +15,22 @@ describe('DiverCity homepage flow', () => {
       .get('.category-button').should('have.length', 3).and('contain', 'View All')
   })
 
-  it('should contain a form to select a new search location', () => {
+  it('should indicate the city you are currently searching', () => {
     cy.get('form')
       .contains('You\'re currently searching in Cedar Rapids')
-      .get('input').type('Denver')
+  })
+
+  it('should contain a form to select a new search location', () => {
+    cy.get('form input')
+      .type('Denver')
+      .get('.submit-button').click()
+      .get('form')
+      .contains('You\'re currently searching in Denver')
+  })
+
+  it('should allow you to change the city back to your current location', () => {
+    cy.get('form input')
+      .type('Denver')
       .get('.submit-button').click()
       .get('form')
       .contains('You\'re currently searching in Denver')
