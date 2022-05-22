@@ -44,7 +44,7 @@ const Listings = () => {
 
 
   return(
-    <section>
+    <section className='listings-container'>
       <h2>{biz.category}</h2>
       <select value={filter} onChange={e => setFilter(e.target.value)}>
         <option value=''>Show All</option>

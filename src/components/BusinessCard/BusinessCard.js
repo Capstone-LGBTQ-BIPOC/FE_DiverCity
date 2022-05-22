@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const BusinessCard = ({ name, image, id }) => {
   return(
-    <div>
+    <div className='business-card'>
       <img src={image} alt={`${name}`}/>
       <p>{name}</p>
       <Link to={`/biz/${id}`}>
