@@ -1,8 +1,11 @@
 describe('DiverCity homepage flow', () => {
-  it('should be able to visit the page and view the Title, business categories and buttons', () => {
-    cy.intercept('GET', 'http://www.geoplugin.net/json.gp', { fixture: 'sampleGeoData.json' })
-    cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/businesses?location=denver&category=food', { fixture: 'sampleFoodData.json' })
+  beforeEach(() => {
+    cy.intercept('GET', 'http://www.geoplugin.net/json.gp', { fixture: 'sampleGeoData.json' }).as('location data')
+    cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/businesses?location=denver&category=food', { fixture: 'sampleFoodData.json' }).as('denver businesses')
     cy.visit('http://localhost:3000')
+  })
+
+  it('should contain a title, business categories, and buttons on page load', () => {
     cy.contains('DiverCity: Inclusive Business Guide')
     cy.get('input').type('Denver')
     cy.get('.submit-button').click()
