@@ -20,14 +20,14 @@ const Form = () => {
   }
 
   return (
-    <div>
+    <form>
       {!location.selectedLocation && (
         <h2>You're currently searching in {location.location.city}</h2>
       )}
       {location.selectedLocation && (
         <h2>You're currently searching in {location.selectedLocation}</h2>
       )}
-      <form>
+      <div>
         <input
           type='text'
           placeholder='Enter a City'
@@ -55,8 +55,8 @@ const Form = () => {
         >
           Use Current Location
         </button>
-      </form>
-    </div>
+      </div>
+    </form>
   )
 }
 export default Form
