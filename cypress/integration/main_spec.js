@@ -1,7 +1,6 @@
 describe('DiverCity homepage flow', () => {
   beforeEach(() => {
     cy.intercept('GET', 'http://www.geoplugin.net/json.gp', { fixture: 'sampleGeoData.json' }).as('location data')
-    cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/businesses?location=denver&category=food', { fixture: 'sampleFoodData.json' }).as('denver businesses')
     cy.visit('http://localhost:3000')
   })
 
