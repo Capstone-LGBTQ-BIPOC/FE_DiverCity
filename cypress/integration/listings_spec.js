@@ -17,6 +17,26 @@ describe('listings view', () => {
       .and('have.descendants', 'button')
   })
 
+  it('should display error handling if the city entered is misspelled', () => {
+    cy.get('form input')
+      .type('Dener')
+      .get('.submit-button').click()
+    cy.get('.category-card:first button').click()
+      .url('http://localhost:3000/food')
+      .get('h3')
+      .should('contain', 'No results for your search. Please check your spelling and try a new search.')
+  })
+
+  it('should display error handling if complete gibberish is entered for the city search.', () => {
+    cy.get('form input')
+      .type('asdfasdfasdf')
+      .get('.submit-button').click()
+    cy.get('.category-card:first button').click()
+      .url('http://localhost:3000/food')
+      .get('h3')
+      .should('contain', 'Oops, something went wrong! Please try again later.')
+  })
+
   it('should change the url when viewing a listings page', () => {
     cy.get('.category-card:first button').click()
       .url('http://localhost:3000/food')
