@@ -10,7 +10,7 @@ const BusinessContextProvider = ({ children }) => {
   const [category, setCategory] = useState('')
 
   const [error, setError] = useState(null)
-  
+
   const [isLoading, setIsLoading] = useState(true);
 
   const locationContext = useContext(LocationContext)

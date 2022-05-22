@@ -14,7 +14,7 @@ const BusinessCard = ({ name, image, id }) => {
         <button>Learn More</button>
       </Link>
       <button className='bookmark-button'
-      onClick={(event) => bookmark.updateBookmark(event)}>Bookmark</button>
+      onClick={() => bookmark.updateBookmark(id)}>Bookmark</button>
     </div>
   )
 }
