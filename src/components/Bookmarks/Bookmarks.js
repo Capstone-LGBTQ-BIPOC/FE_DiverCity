@@ -1,11 +1,13 @@
 import { React, useContext } from 'react';
 import './Bookmarks.css';
 import { BookmarkContext } from '../../context/BookmarkContext/BookmarkContext';
+import BusinessCard from '../BusinessCard/BusinessCard'
 
 const Bookmarks = () => {
     const bookmarks = useContext(BookmarkContext);
 
     const savedBusinesses = bookmarks.bookmarked.map(business => {
+      console.log(bookmarks.bookmarked, 'here')
       if(business.isSaved) {
         return (
           <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} id={business.id} />

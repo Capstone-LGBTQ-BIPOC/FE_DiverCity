@@ -19,6 +19,7 @@ const BookmarkContextProvider = ({ children }) => {
         }
       return business
     })
+    console.log(updatedArray, 'array')
     setBookmarked(updatedArray)
   }
 

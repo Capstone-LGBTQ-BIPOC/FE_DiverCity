@@ -1,6 +1,7 @@
 import Categories from '../Categories/Categories'
 import Listings from '../Listings/Listings'
 import Modal from '../Modal/Modal'
+import Bookmarks from '../Bookmarks/Bookmarks'
 import './App.css'
 import { LocationContextProvider } from '../../context/LocationContext/LocationContext'
 import { BusinessContextProvider } from '../../context/BusinessData/BusinessContext'
@@ -22,6 +23,7 @@ const App = () => {
               <Route exact path='/' element={<Categories />} />
               <Route path='/:category' element={<Listings />} />
               <Route path='/biz/:id' element={<Modal />} />
+              <Route exact path='/bookmarks' element={<Bookmarks />}/>
             </Routes>
           </main>
         </BookmarkContextProvider>
