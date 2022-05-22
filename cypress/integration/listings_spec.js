@@ -16,4 +16,9 @@ describe('listings view', () => {
       .and('have.descendants', 'img')
       .and('have.descendants', 'button')
   })
+
+  it('should change the url when viewing a listings page', () => {
+    cy.get('.category-card:first button').click()
+      .url('http://localhost:3000/food')
+  })
 })
