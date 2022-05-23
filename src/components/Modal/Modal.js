@@ -15,8 +15,6 @@ const Modal = () => {
       .catch(err => setError('Oops, something went wrong! Please try again later.'))
   }, [])
 
-  console.log(business)
-
   return (
     <div>
       <button onClick={() => navigate(-1)}>Go Back</button>
