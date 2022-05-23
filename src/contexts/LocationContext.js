@@ -1,5 +1,5 @@
 import { useState, useEffect, createContext } from 'react';
-import {getGeo} from 'geoplugin';
+import {getGeoSSL} from 'geoplugin';
 
 const LocationContext = createContext(null);
 
@@ -13,7 +13,10 @@ const LocationContextProvider = ({ children }) => {
   useEffect(() => {
     getGeoSSL(apiKey)
       .catch(error => console.log(error))
-      .then((data) => setLocation(data));
+      .then((data) => {
+        console.log(data)
+        setLocation(data)
+      });
   },[])
 
   return (
