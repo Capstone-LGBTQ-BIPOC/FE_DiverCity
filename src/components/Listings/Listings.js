@@ -3,12 +3,9 @@ import { BusinessContext } from '../../contexts/BusinessContext';
 import { LocationContext } from '../../contexts/LocationContext';
 import ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
-import { useParams } from 'react-router-dom';
 import './Listings.css';
 
-const Listings = () => {
-  let { category } = useParams();
-
+const Listings = ({ category }) => {
   const biz = useContext(BusinessContext);
   const locationContext = useContext(LocationContext);
   let error = '';

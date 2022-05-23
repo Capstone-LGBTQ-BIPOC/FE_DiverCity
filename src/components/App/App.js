@@ -24,7 +24,9 @@ const App = () => {
             <Form />
             <Routes>
               <Route exact path="/" element={<Categories />} />
-              <Route path="/:category" element={<Listings />} />
+              <Route path="/food" element={<Listings category='food' />} />
+              <Route path="/shopping" element={<Listings category='shopping' />} />
+              <Route path="/entertainment" element={<Listings category='entertainment' />} />
               <Route path="/biz/:id" element={<Modal />} />
               <Route exact path="/bookmarks" element={<Bookmarks />} />
               <Route path="*" element={<Error404 />}/>
