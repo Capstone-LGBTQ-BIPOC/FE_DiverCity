@@ -9,14 +9,13 @@ const BookmarkContextProvider = ({ children }) => {
   const biz = useContext(BusinessContext)
 
   const updateBookmark = (id) => {
-    const updatedArray = biz.businesses.map(business => {
-      if(business.id === id){
+    const updatedBusiness = biz.businesses.filter(business => {
+      if (business.id === id) {
         business.isSaved = !business.isSaved
         return business
       }
-      return business
     })
-    setBookmarks([...bookmarks, ...updatedArray])
+    setBookmarks([...bookmarks, ...updatedBusiness])
   }
 
   return (

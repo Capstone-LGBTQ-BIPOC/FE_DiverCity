@@ -4,15 +4,15 @@ import { BookmarkContext } from '../../contexts/BookmarkContext';
 import BusinessCard from '../BusinessCard/BusinessCard'
 
 const Bookmarks = () => {
-    const bookmarks = useContext(BookmarkContext);
+  const bookmarks = useContext(BookmarkContext);
 
-    const savedBusinesses = bookmarks.bookmarks.map(business => {
-      if(business.isSaved) {
-        return (
-          <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} id={business.id} />
-        )
-      }
-    })
+  const savedBusinesses = bookmarks.bookmarks.map(business => {
+    if (business.isSaved) {
+      return (
+        <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} id={business.id} />
+      )
+    }
+  })
 
 return (
   <div className='bookmarks-container'>
