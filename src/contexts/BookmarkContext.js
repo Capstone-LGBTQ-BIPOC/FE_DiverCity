@@ -4,7 +4,7 @@ import { BusinessContext  } from "./BusinessContext";
 const BookmarkContext = createContext([])
 
 const BookmarkContextProvider = ({ children }) => {
-  const [bookmarked, setBookmarked] = useState([])
+  const [bookmarks, setBookmarks] = useState([])
 
   const biz = useContext(BusinessContext)
 
@@ -16,12 +16,12 @@ const BookmarkContextProvider = ({ children }) => {
       }
       return business
     })
-    setBookmarked([...bookmarked, ...updatedArray])
+    setBookmarks([...bookmarks, ...updatedArray])
   }
 
   return (
     <BookmarkContext.Provider
-      value={{bookmarked, updateBookmark}}
+      value={{bookmarks, updateBookmark}}
     >
       {children}
     </BookmarkContext.Provider>
