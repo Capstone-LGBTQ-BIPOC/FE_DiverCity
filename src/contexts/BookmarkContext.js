@@ -1,5 +1,5 @@
 import { createContext, useState, useContext } from "react";
-import { BusinessContext  } from "../BusinessData/BusinessContext";
+import { BusinessContext  } from "./BusinessContext";
 
 const BookmarkContext = createContext([])
 

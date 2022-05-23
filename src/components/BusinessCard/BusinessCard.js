@@ -1,7 +1,7 @@
 import { React, useContext } from 'react';
 import './BusinessCard.css';
 import { Link } from 'react-router-dom';
-import { BookmarkContext } from '../../context/BookmarkContext/BookmarkContext';
+import { BookmarkContext } from '../../contexts/BookmarkContext';
 
 const BusinessCard = ({ name, image, id }) => {
   const bookmark = useContext(BookmarkContext);

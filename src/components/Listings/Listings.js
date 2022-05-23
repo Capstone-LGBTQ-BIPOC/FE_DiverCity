@@ -1,15 +1,26 @@
 import { useContext, useState, useEffect } from 'react';
-import { BusinessContext } from '../../context/BusinessData/BusinessContext';
-import  ReactLoading  from 'react-loading';
+import { BusinessContext } from '../../contexts/BusinessContext';
+import { LocationContext } from '../../contexts/LocationContext';
+import ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
+import { useParams } from 'react-router-dom';
 import './Listings.css';
-import { faBiohazard } from '@fortawesome/free-solid-svg-icons';
 
 const Listings = () => {
+  let { category } = useParams();
+  console.log(category);
+
   const biz = useContext(BusinessContext);
+  const locationContext = useContext(LocationContext);
   let error = '';
 
   const [filter, setFilter] = useState('');
+
+  useEffect(() => {
+    if (locationContext.location.city) {
+      biz.getBusinesses(category)
+    }
+  }, [biz.searchLocation])
 
   let subCategories = [];
   

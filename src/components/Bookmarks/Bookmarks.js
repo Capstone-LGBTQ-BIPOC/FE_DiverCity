@@ -1,6 +1,6 @@
 import { React, useContext } from 'react';
 import './Bookmarks.css';
-import { BookmarkContext } from '../../context/BookmarkContext/BookmarkContext';
+import { BookmarkContext } from '../../contexts/BookmarkContext';
 import BusinessCard from '../BusinessCard/BusinessCard'
 
 const Bookmarks = () => {

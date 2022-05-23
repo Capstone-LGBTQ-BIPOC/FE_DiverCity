@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext, useState } from 'react'
-import { LocationContext } from '../../context/LocationContext/LocationContext'
+import { LocationContext } from '../../contexts/LocationContext'
 
 const Form = () => {
   const location = useContext(LocationContext)
@@ -51,6 +51,7 @@ const Form = () => {
             event.preventDefault()
             location.setSelectedLocation('')
           }}
+          className='curr-location-button'
         >
           Use Current Location
         </button>
