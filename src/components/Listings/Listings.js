@@ -8,7 +8,6 @@ import './Listings.css';
 
 const Listings = () => {
   let { category } = useParams();
-  console.log(category);
 
   const biz = useContext(BusinessContext);
   const locationContext = useContext(LocationContext);
@@ -23,7 +22,7 @@ const Listings = () => {
   }, [biz.searchLocation])
 
   let subCategories = [];
-  
+
   biz.businesses.forEach(business => business.attributes.sub_category.forEach(subCat => !subCategories.includes(subCat) && subCategories.push(subCat)));
 
   const options = subCategories.sort().map(subCat => <option key={subCat} value={subCat}>{subCat}</option>);
@@ -35,7 +34,7 @@ const Listings = () => {
   }
 
   if(!biz.businesses.length && biz.error) {
-    error = <h3>{biz.error}</h3> 
+    error = <h3>{biz.error}</h3>
   }
 
   businessListings = businessListings.map(business => {
