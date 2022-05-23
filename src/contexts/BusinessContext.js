@@ -28,7 +28,6 @@ const BusinessContextProvider = ({ children }) => {
       .then(data => {
         setBusinesses(data.data)
         if (!businesses.length) {
-          console.log(error)
           setError('No results for your search. Please check your spelling and try a new search.')
         }
       })
