@@ -42,7 +42,6 @@ const Listings = ({ category }) => {
   return(
     <section>
       <h2>{biz.category}</h2>
-      <Nav />
       <select value={filter} onChange={e => setFilter(e.target.value)}>
         <option value=''>Show All</option>
         {options}

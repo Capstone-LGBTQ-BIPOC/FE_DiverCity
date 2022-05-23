@@ -2,6 +2,7 @@ import Categories from "../Categories/Categories";
 import Listings from "../Listings/Listings";
 import Modal from "../Modal/Modal";
 import Bookmarks from "../Bookmarks/Bookmarks";
+import Nav from "../Nav/Nav"
 import "./App.css";
 import { LocationContextProvider } from "../../contexts/LocationContext";
 import { BusinessContextProvider } from "../../contexts/BusinessContext";
@@ -20,6 +21,7 @@ const App = () => {
               <NavLink to="/">
                 <h1>DiverCity: Inclusive Business Guide</h1>
               </NavLink>
+              <Nav />
             </header>
             <Form />
             <Routes>

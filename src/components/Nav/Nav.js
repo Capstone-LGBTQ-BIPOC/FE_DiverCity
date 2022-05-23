@@ -1,12 +1,11 @@
 import { useContext } from 'react'
 import './Nav.css'
-import { BusinessContext } from '../../context/BusinessData/BusinessContext'
+import { BusinessContext } from '../../contexts/BusinessContext'
 import { NavLink } from 'react-router-dom'
 
-function Nav({ icon, type, label}) {
+function Nav({ icon, type}) {
 	const biz = useContext(BusinessContext);
 
-console.log(label, 'label')
 	return (
 		<nav className='navigation'>
 			<div className='nav-buttons'>
@@ -30,7 +29,9 @@ console.log(label, 'label')
 					biz.getBusinesses('entertainment')
           biz.setCategory('Arts & Entertainment')
 				}}>Arts & Entertainment</button>
-        <button>Favorites</button>
+				</NavLink>
+				<NavLink to='/bookmarks'>
+        <button>Want to Visit</button>
 				</NavLink>
 			</div>
 		</nav>
