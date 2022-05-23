@@ -41,7 +41,6 @@ const Listings = () => {
     return <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} id={business.id} />
   });
 
-
   return(
     <section>
       <h2>{biz.category}</h2>

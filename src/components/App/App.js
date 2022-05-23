@@ -8,6 +8,7 @@ import { BusinessContextProvider } from "../../contexts/BusinessContext";
 import { BookmarkContextProvider } from "../../contexts/BookmarkContext";
 import { Routes, Route, NavLink } from "react-router-dom";
 import Form from "../Form/Form";
+import Error404 from '../Error404/Error404';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
               <Route path="/:category" element={<Listings />} />
               <Route path="/biz/:id" element={<Modal />} />
               <Route exact path="/bookmarks" element={<Bookmarks />} />
+              <Route path="*" element={<Error404 />}/>
             </Routes>
           </main>
         </BookmarkContextProvider>
