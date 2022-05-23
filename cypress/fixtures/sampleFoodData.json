@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": "5G2X2q9p7QFdm-LbyutltQ",
+      "type": "business_list",
+      "attributes": {
+        "name": "Jelly",
+        "sub_category": [
+          "American (New)",
+          "Breakfast & Brunch",
+          "Coffee & Tea"
+        ],
+        "address": {
+          "city": "Denver",
+          "street_address": "600 E 13th Ave",
+          "state": "CO",
+          "zipcode": "80203"
+        },
+        "image": "https://s3-media2.fl.yelpcdn.com/bphoto/7nyoidNTHWZk9DIUlkxvgQ/o.jpg"
+      }
+    },
+    {
+      "id": "B2i4QJY03Iqo7gxdCnJbiw",
+      "type": "business_list",
+      "attributes": {
+        "name": "Jamaican Grill",
+        "sub_category": [
+          "Caribbean"
+        ],
+        "address": {
+          "city": "Denver",
+          "street_address": "709 W 8th Ave",
+          "state": "CO",
+          "zipcode": "80204"
+        },
+        "image": "https://s3-media4.fl.yelpcdn.com/bphoto/hdi3WKj2m8EvItywkUw-Lw/o.jpg"
+      }
+    },
+    {
+      "id": "gagUrh3806qc5hZ14F0Odw",
+      "type": "business_list",
+      "attributes": {
+        "name": "Denver Biscuit Co.",
+        "sub_category": [
+          "Sandwiches",
+          "Breakfast & Brunch"
+        ],
+        "address": {
+          "city": "Denver",
+          "street_address": "3237 E Colfax Ave",
+          "state": "CO",
+          "zipcode": "80206"
+        },
+        "image": "https://s3-media1.fl.yelpcdn.com/bphoto/bxPN9shgJEtwvT3Hrf_pCg/o.jpg"
+      }
+    }
+  ]
+}

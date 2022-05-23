@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": "Eg8zynRkvPFuQnShkryFZg",
+      "type": "business_list",
+      "attributes": {
+        "name": "Blush & Blu",
+        "sub_category": [
+          "Gay Bars",
+          "Lounges",
+          "Venues & Event Spaces"
+        ],
+        "address": {
+          "city": "Denver",
+          "street_address": "1526 E Colfax Ave",
+          "state": "CO",
+          "zipcode": "80218"
+        },
+        "image": "https://s3-media2.fl.yelpcdn.com/bphoto/ppGI4KdL_VmGWE3V8d2igw/o.jpg"
+      }
+    },
+    {
+      "id": "HjoQFMaLbcC9Af4_kNJtAQ",
+      "type": "business_list",
+      "attributes": {
+        "name": "A Music Plus",
+        "sub_category": [
+          "DJs",
+          "Musicians"
+        ],
+        "address": {
+          "city": "Denver",
+          "street_address": "5454 Washington St",
+          "state": "CO",
+          "zipcode": "80216"
+        },
+        "image": "https://s3-media2.fl.yelpcdn.com/bphoto/WSFtEoLVru1hm-MF89dIKQ/o.jpg"
+      }
+    },
+    {
+      "id": "DXfahd8qd_sZq4ZT4dOHdg",
+      "type": "business_list",
+      "attributes": {
+        "name": "Triangle Denver",
+        "sub_category": [
+          "Gay Bars"
+        ],
+        "address": {
+          "city": "Denver",
+          "street_address": "2036 N Broadway",
+          "state": "CO",
+          "zipcode": "80205"
+        },
+        "image": "https://s3-media3.fl.yelpcdn.com/bphoto/XiBPqHSAhvTc596u2oNHVA/o.jpg"
+      }
+    }
+  ]
+}

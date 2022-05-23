@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { BusinessContext } from '../../context/BusinessData/BusinessContext';
+import { BusinessContext } from '../../contexts/BusinessContext';
 import { NavLink } from 'react-router-dom';
 
 const CategoryCard = ({ icon, type, label }) => {
@@ -11,13 +11,10 @@ const CategoryCard = ({ icon, type, label }) => {
       <h1>{label}</h1>
       <FontAwesomeIcon icon={icon} />
       <NavLink to={`/${type}`}>
-        <button onClick={() => {
-          biz.getBusinesses(type)
-          biz.setCategory(label)
-        }}>View All</button>
+        <button className='category-button' onClick={() => biz.setCategory(label)}>View All</button>
       </NavLink>
     </section>
   )
 }
 
-export default CategoryCard
+export default CategoryCard;

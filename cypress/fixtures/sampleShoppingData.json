@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "id": "dKf_zc_gvlQJRXXZNkUNng",
+      "type": "business_list",
+      "attributes": {
+        "name": "Stanley Marketplace",
+        "sub_category": [
+          "Food Court",
+          "Shopping Centers"
+        ],
+        "address": {
+          "city": "Aurora",
+          "street_address": "2501 Dallas St",
+          "state": "CO",
+          "zipcode": "80010"
+        },
+        "image": "https://s3-media1.fl.yelpcdn.com/bphoto/1qGXCCIqwJHV05leOS6yXw/o.jpg"
+      }
+    },
+    {
+      "id": "w6_ktAYirzri-3VV3Ou0mg",
+      "type": "business_list",
+      "attributes": {
+        "name": "Cherry Creek Shopping Center",
+        "sub_category": [
+          "Shopping Centers"
+        ],
+        "address": {
+          "city": "Denver",
+          "street_address": "3000 E 1st Ave",
+          "state": "CO",
+          "zipcode": "80206"
+        },
+        "image": "https://s3-media2.fl.yelpcdn.com/bphoto/JpVdlzQ47jCUmq_HXWGYOw/o.jpg"
+      }
+    },
+    {
+      "id": "0pMru3MZYhzCJPOyA-FgWA",
+      "type": "business_list",
+      "attributes": {
+        "name": "Mia's Creative Tailoring",
+        "sub_category": [
+          "Sewing & Alterations",
+          "Women's Clothing",
+          "Bridal"
+        ],
+        "address": {
+          "city": "Denver",
+          "street_address": "2765 S Colorado Blvd",
+          "state": "CO",
+          "zipcode": "80222"
+        },
+        "image": "https://s3-media2.fl.yelpcdn.com/bphoto/1en7jB_Cil4HTWEt_qsHSQ/o.jpg"
+      }
+    }
+  ]
+}
