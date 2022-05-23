@@ -10,17 +10,13 @@ const BookmarkContextProvider = ({ children }) => {
 
   const updateBookmark = (id) => {
     const updatedArray = biz.businesses.map(business => {
-      if(business.id === id && !business.isSaved){
-        business.isSaved = true
-        console.log(business, 'business')
-      } else if (
-        business.id === id && business.isSaved) {
-          business.isSaved = false
-        }
+      if(business.id === id){
+        business.isSaved = !business.isSaved
+        return business
+      }
       return business
     })
-    console.log(updatedArray, 'array')
-    setBookmarked(updatedArray)
+    setBookmarked([...bookmarked, ...updatedArray])
   }
 
   return (
