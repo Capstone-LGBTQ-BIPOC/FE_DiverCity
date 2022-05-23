@@ -6,6 +6,7 @@ import { LocationContextProvider } from '../../contexts/LocationContext'
 import { BusinessContextProvider } from '../../contexts/BusinessContext'
 import { Routes, Route, NavLink } from 'react-router-dom'
 import Form from '../Form/Form'
+import Geoplugin from '../Geoplugin/Geoplugin'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
             <Route exact path='/' element={<Categories />} />
             <Route path='/:category' element={<Listings />} />
             <Route path='/biz/:id' element={<Modal />} />
+            <Route path='/geoplugin_activation.html' element={<Geoplugin />} />
           </Routes>
         </main>
       </BusinessContextProvider>
