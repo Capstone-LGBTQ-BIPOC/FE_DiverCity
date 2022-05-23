@@ -3,13 +3,15 @@ import {getGeo} from 'geoplugin';
 
 const LocationContext = createContext(null);
 
+const apiKey = process.env.REACT_APP_API_KEY;
+
 const LocationContextProvider = ({ children }) => {
 
   const [location, setLocation] = useState('')
   const [selectedLocation, setSelectedLocation] = useState('')
 
   useEffect(() => {
-    getGeo()
+    getGeoSSL(apiKey)
       .catch(error => console.log(error))
       .then((data) => setLocation(data));
   },[])
