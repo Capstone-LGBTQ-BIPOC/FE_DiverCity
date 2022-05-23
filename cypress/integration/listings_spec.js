@@ -21,7 +21,7 @@ describe('listings view', () => {
       .and('have.descendants', 'button')
   })
 
-  it('should display error handling if the city entered is misspelled', () => {
+  it('should display an error message if the city entered is misspelled', () => {
     cy.get('form input')
       .type('Dener')
       .get('.submit-button').click()
@@ -31,7 +31,7 @@ describe('listings view', () => {
       .should('contain', 'No results for your search. Please check your spelling and try a new search.')
   })
 
-  it('should display error handling if complete gibberish is entered for the city search.', () => {
+  it('should display an error message if complete gibberish is entered for the city search.', () => {
     cy.get('form input')
       .type('asdfasdfasdf')
       .get('.submit-button').click()
@@ -93,5 +93,11 @@ describe('listings view', () => {
       .should('contain', 'Visit Website')
       .should('have.attr', 'href')
       .url('https://www.yelp.com/biz/stanley-marketplace-aurora?adjust_creative=us0-GXhQzuMv9uLzOEXxpw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=us0-GXhQzuMv9uLzOEXxpw')
+  })
+
+  it('should change the url when viewing a business detail page', () => {
+    cy.get('button').eq(3).click()
+      .get('.listings-container button:first').click()
+      .url('http://localhost:3000/biz/dKf_zc_gvlQJRXXZNkUNng')
   })
 })
