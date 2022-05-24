@@ -1,0 +1,40 @@
+{
+  "data": {
+    "id": "B2i4QJY03Iqo7gxdCnJbiw",
+    "type": "business",
+    "attributes": {
+      "name": "Jamaican Grill",
+      "category": [
+        "Caribbean"
+      ],
+      "location": "709 W 8th Ave, Denver, CO 80204",
+      "hours": {
+        "Tuesday": {
+          "open": "1130",
+          "close": "1900"
+        },
+        "Wednesday": {
+          "open": "1130",
+          "close": "1900"
+        },
+        "Thursday": {
+          "open": "1130",
+          "close": "1900"
+        },
+        "Friday": {
+          "open": "1130",
+          "close": "2000"
+        },
+        "Saturday": {
+          "open": "1130",
+          "close": "2000"
+        }
+      },
+      "phone_number": "(303) 623-0013",
+      "url": "https://www.yelp.com/biz/jamaican-grill-denver?adjust_creative=us0-GXhQzuMv9uLzOEXxpw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=us0-GXhQzuMv9uLzOEXxpw",
+      "coordinates": "39.729156, -104.996678",
+      "image": "https://s3-media4.fl.yelpcdn.com/bphoto/hdi3WKj2m8EvItywkUw-Lw/o.jpg",
+      "sub_category": null
+    }
+  }
+}
