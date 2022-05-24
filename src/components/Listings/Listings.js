@@ -3,7 +3,6 @@ import { BusinessContext } from '../../contexts/BusinessContext';
 import { LocationContext } from '../../contexts/LocationContext';
 import ReactLoading  from 'react-loading';
 import BusinessCard from '../BusinessCard/BusinessCard';
-import Nav from '../Nav/Nav';
 import './Listings.css';
 
 const Listings = ({ category }) => {
