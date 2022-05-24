@@ -37,7 +37,7 @@ const Modal = () => {
       time = convertFourDigitsToTime(timeAsNumber.toString()) + 'am'
     } else if (business.hours[day][openOrClose] === '0000') {
       return 'N/A'
-    } else if (business.hours[day][openOrClose] > 1300) {
+    } else if (business.hours[day][openOrClose] >= 1300) {
       const timeAsNumber = parseInt(business.hours[day][openOrClose]) - 1200
       if (timeAsNumber.toString().length === 3) {
         time =
