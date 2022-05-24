@@ -56,12 +56,4 @@ describe('Bookmark functionality', () => {
       .get('h2')
       .should('contain', 'Jamaican Grill')
   })
-
-  // it('should let you bookmark in a single business view', () => {
-  //   cy.get('button').eq(3).click()
-  //     .url('http://localhost:3000/shopping')
-  //   cy.get('button')
-  //     .should('contain', 'Learn More').eq(2).click()
-  //   cy.url('http://localhost:3000/biz/dKf_zc_gvlQJRXXZNkUNng')
-  // })
 })
