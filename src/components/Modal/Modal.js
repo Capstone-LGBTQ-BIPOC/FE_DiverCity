@@ -23,7 +23,7 @@ const Modal = () => {
 
     fetchRecommendations(id)
       .then(data => setRecos(data.data))
-      .catch(err => 
+      .catch(err =>
         setRecosError('Oops, something went wrong! Please try again later.'))
   }, [])
 
@@ -47,7 +47,16 @@ const Modal = () => {
           'pm'
       } else time = convertFourDigitsToTime(timeAsNumber.toString()) + 'pm'
     } else if (business.hours[day][openOrClose] < 1200) {
-      time = convertFourDigitsToTime(business.hours[day][openOrClose]) + 'am'
+      if(business.hours[day][openOrClose][0] === '0') {
+        const singleDigitTime= business.hours[day][openOrClose].slice(1)
+        time =
+          singleDigitTime.toString().substring(0, 1) +
+          ':' +
+          singleDigitTime.toString().substring(1, 3) +
+          'am'
+      } else {
+        time = convertFourDigitsToTime(business.hours[day][openOrClose]) + 'am'
+      }
     } else {
       time = convertFourDigitsToTime(business.hours[day][openOrClose]) + 'pm'
     }
