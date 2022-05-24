@@ -10,6 +10,7 @@ const Modal = () => {
   let recommendations
   let location
   let contact
+  let url
 
   const [business, setBusiness] = useState('')
   const [recos, setRecos] = useState([])
@@ -39,6 +40,14 @@ const Modal = () => {
     contact = business.phone_number
   } else {
     contact = 'N/A'
+  }
+
+  if(business.url) {
+    url = <a href={business.url} target='_blank'>
+      Visit Website
+    </a>
+  } else {
+    url = 'No website available'
   }
 
 
@@ -126,9 +135,7 @@ const Modal = () => {
           <h3>Hours:</h3>
           {hoursDisplay}
           <h3>Contact: {contact}</h3>
-          <a href={business.url} target='_blank'>
-            Visit Website
-          </a>
+          {url}
           <h2>Recommendations</h2>
           {recommendations}
         </>
