@@ -5,6 +5,7 @@ describe('Bookmark functionality', () => {
     cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/businesses?location=Denver&category=food', { fixture: 'sampleFoodData.json' }).as('food results')
     cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/businesses/dKf_zc_gvlQJRXXZNkUNng', { fixture: 'singleBiz1.json' }).as('single biz')
     cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/businesses/B2i4QJY03Iqo7gxdCnJbiw', { fixture: 'singleBiz2.json' }).as('single biz')
+    cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/recommendations?business_id=B2i4QJY03Iqo7gxdCnJbiw', { fixture: 'noResults.json' }).as('recommendations')
     cy.visit('http://localhost:3000')
       .get('form input').type('Denver')
       .get('.submit-button').click()
@@ -14,24 +15,20 @@ describe('Bookmark functionality', () => {
     cy.get('button').eq(2).click()
       .url('http://localhost:3000/shopping')
     cy.get('button')
-      .should('contain', 'Bookmark').eq(8).click()
-      .get('button').eq(10).click()
+      .should('contain', 'Bookmark').eq(7).click()
+      .get('button')
+      .should('contain', 'Un-Bookmark')
   })
 
-  it('should let you view your bookmarks', () => {
+  it.only('should let you view your bookmarks', () => {
     cy.get('button').eq(1).click()
       .url('http://localhost:3000/food')
-      .get('button')
-      .get('button').eq(8).click()
-      .get('button').eq(10).click()
-      .get('button').eq(12).click()
+      .get('button').eq(7).click()
       .get('button').eq(4).click()
     cy.url('http://localhost:3000/bookmarks')
       .get('.bookmarks-container')
       .get('.saved-businesses')
       .should('contain', 'Jelly')
-      .and('contain', 'Jamaican Grill')
-      .and('contain', 'Denver Biscuit Co.')
   })
 
   it('should let you remove bookmarks in listings view', () => {
