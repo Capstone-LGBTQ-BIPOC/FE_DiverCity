@@ -50,7 +50,6 @@ const Modal = () => {
     url = 'No website available'
   }
 
-
   const convertFourDigitsToTime = inputTime => {
     return inputTime.substring(0, 2) + ':' + inputTime.substring(2, 4)
   }
