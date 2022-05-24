@@ -6,13 +6,9 @@ const LocationContext = createContext(null);
 const LocationContextProvider = ({ children }) => {
 
   const [location, setLocation] = useState('')
-  const [selectedLocation, setSelectedLocation] = useState('')
+  const [selectedLocation, setSelectedLocation] = useState('Atlanta')
 
-  useEffect(() => {
-    getGeo()
-      .catch(error => console.log(error))
-      .then((data) => setLocation(data));
-  },[])
+
 
   return (
     <LocationContext.Provider value={{location, selectedLocation, setSelectedLocation}}>
