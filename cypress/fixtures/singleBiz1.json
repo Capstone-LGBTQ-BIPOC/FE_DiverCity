@@ -1,0 +1,46 @@
+{
+  "data": {
+    "id": "dKf_zc_gvlQJRXXZNkUNng",
+    "type": "business",
+    "attributes": {
+      "name": "Stanley Marketplace",
+      "category": "Food Court",
+      "location": "2501 Dallas St, Aurora, CO 80010",
+      "hours": {
+        "Monday": {
+          "open": "0700",
+          "close": "2100"
+        },
+        "Tuesday": {
+          "open": "0700",
+          "close": "2100"
+        },
+        "Wednesday": {
+          "open": "0700",
+          "close": "2100"
+        },
+        "Thursday": {
+          "open": "0700",
+          "close": "2200"
+        },
+        "Friday": {
+          "open": "0700",
+          "close": "2200"
+        },
+        "Saturday": {
+          "open": "0700",
+          "close": "2200"
+        },
+        "Sunday": {
+          "open": "0700",
+          "close": "2100"
+        }
+      },
+      "phone_number": "(720) 588-9158",
+      "url": "https://www.yelp.com/biz/stanley-marketplace-aurora?adjust_creative=us0-GXhQzuMv9uLzOEXxpw\u0026utm_campaign=yelp_api_v3\u0026utm_medium=api_v3_business_lookup\u0026utm_source=us0-GXhQzuMv9uLzOEXxpw",
+      "coordinates": "39.75223, -104.87738",
+      "image": "https://s3-media1.fl.yelpcdn.com/bphoto/1qGXCCIqwJHV05leOS6yXw/o.jpg",
+      "sub_category": "Shopping Centers"
+    }
+  }
+}

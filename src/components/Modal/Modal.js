@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { fetchBusiness } from '../../apiCalls'
+import { fetchBusiness, fetchRecommendations } from '../../apiCalls'
 import { useParams, useNavigate } from 'react-router-dom'
 
 const Modal = () => {
@@ -7,8 +7,11 @@ const Modal = () => {
   let navigate = useNavigate()
   let hoursDisplay
   let time
+  let recommendations
 
   const [business, setBusiness] = useState('')
+  const [recos, setRecos] = useState([])
+  const [recosError, setRecosError] = useState(null)
   const [error, setError] = useState(null)
 
   useEffect(() => {
@@ -17,6 +20,11 @@ const Modal = () => {
       .catch(err =>
         setError('Oops, something went wrong! Please try again later.')
       )
+
+    fetchRecommendations(id)
+      .then(data => setRecos(data.data))
+      .catch(err => 
+        setRecosError('Oops, something went wrong! Please try again later.'))
   }, [])
 
   const convertFourDigitsToTime = inputTime => {
@@ -61,6 +69,20 @@ const Modal = () => {
     })
   }
 
+  if (recos) {
+    if (!recos.length) {
+      recommendations = <p>No user recommendations yet.</p>
+    } else {
+      recommendations = recos.map(rec => {
+        return (
+          <div key={recos.length}>
+            <p>User: {rec.attributes.user}</p>
+            <p>Recommendation: {rec.attributes.recommendation}</p>
+          </div>
+        )
+      })
+    }
+  }
 
   return (
     <div>
@@ -74,12 +96,15 @@ const Modal = () => {
           <h3>Location: {business.location}</h3>
           <h3>Hours:</h3>
           {hoursDisplay}
-          <h3>Contact: {business.phone}</h3>
+          <h3>Contact: {business.phone_number}</h3>
           <a href={business.url} target='_blank'>
             Visit Website
           </a>
+          <h2>Recommendations</h2>
+          {recommendations}
         </>
       )}
+      {recosError && <p>{recosError}</p>}
     </div>
   )
 }

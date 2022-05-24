@@ -21,13 +21,10 @@ const Form = () => {
 
   return (
     <div>
-      {/* {!location.selectedLocation && (
-        <h2>You're currently searching in {location.location.city}</h2>
-      )} */}
       {location.selectedLocation && (
-        <h2>You're currently searching in {location.selectedLocation}</h2>
-      )}
-      <form>
+        <h2>You're currently searching in {location.selectedLocation}</h2>)}
+      <div>
+       <form/>
         <input
           type='text'
           placeholder='Enter a City'
@@ -38,7 +35,6 @@ const Form = () => {
             setSubmittedLocation(event.target.value)
           }}
         />
-
         <button
           onClick={submitLocation}
           disabled={!typed}

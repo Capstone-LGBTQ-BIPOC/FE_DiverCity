@@ -8,4 +8,9 @@ const fetchBusiness = id => {
     .then(response => response.json())
 }
 
-export { fetchBusinesses, fetchBusiness };
+const fetchRecommendations = id => {
+  return fetch(`https://immense-falls-83363.herokuapp.com/api/v1/recommendations?business_id=${id}`)
+    .then(response => response.json())
+}
+
+export { fetchBusinesses, fetchBusiness, fetchRecommendations };

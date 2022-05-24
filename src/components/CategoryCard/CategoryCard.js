@@ -7,7 +7,7 @@ const CategoryCard = ({ icon, type, label }) => {
   const biz = useContext(BusinessContext);
   
   return (
-    <section>
+    <section className='category-card'>
       <h1>{label}</h1>
       <FontAwesomeIcon icon={icon} />
       <NavLink to={`/${type}`}>

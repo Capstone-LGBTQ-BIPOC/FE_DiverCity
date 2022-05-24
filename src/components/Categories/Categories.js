@@ -5,7 +5,7 @@ import { faUtensils, faBagShopping, faMusic } from '@fortawesome/free-solid-svg-
 
 const Categories = () => {
   return (
-    <section>
+    <section className='categories-container'>
       <h2>Pick your category</h2>
       <CategoryCard icon={faUtensils} type='food' label='Food & Drink'/>
       <CategoryCard icon={faBagShopping} type='shopping' label='Shopping' />
