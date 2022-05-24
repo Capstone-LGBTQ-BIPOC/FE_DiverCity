@@ -27,5 +27,16 @@ describe('Error handling', () => {
         .url('http://localhost:3000/food')
         .get('h3')
         .should('contain', 'Oops, something went wrong! Please try again later.')
-    })
+  })
+
+  it('should display an error message for a 404 error', () => {
+    cy.visit('http://localhost:3000/videogames')
+      .contains('Page not found. Please return to home.')
+  })
+
+  it('should be able to go back to the homepage after seeing a 404 error', () => {
+    cy.visit('http://localhost:3000/bar')
+      .get('a').eq(6).click()
+      .url('http://localhost:3000')
+  })
 })
