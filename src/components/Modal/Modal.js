@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { BookmarkContext } from '../../contexts/BookmarkContext';
 import { fetchBusiness } from '../../apiCalls';
 import { useParams, useNavigate } from 'react-router-dom';
 
 const Modal = () => {
   const { id } = useParams();
   let navigate = useNavigate();
-  const bookmark = useContext(BookmarkContext)
 
   const [business, setBusiness] = useState(null);
   const [error, setError] = useState(null);
@@ -28,8 +26,6 @@ const Modal = () => {
         <h3>Location: {business.location}</h3>
         <h3>Contact: {business.phone}</h3>
         <a href={business.url} target='_blank'>Visit Website</a>
-        <button className='single-biz-bookmark-button'
-        onClick={() => {bookmark.updateBookmark(id)}}>Bookmark</button>
       </>)}
     </div>
   )
