@@ -19,8 +19,17 @@ const Modal = () => {
       )
   }, [])
 
+  const convertFourDigitsToTime = inputTime => {
+    return inputTime.substring(0, 2) + ':' + inputTime.substring(2, 4)
+  }
+
   const convertTime = (openOrClose, day) => {
-    if (business.hours[day][openOrClose] > 1300) {
+    if (business.hours[day][openOrClose] === 2400) {
+      const timeAsNumber = parseInt(business.hours[day][openOrClose]) - 1200
+      time = convertFourDigitsToTime(timeAsNumber.toString()) + 'am'
+    } else if (business.hours[day][openOrClose] === '0000') {
+      return 'N/A'
+    } else if (business.hours[day][openOrClose] > 1300) {
       const timeAsNumber = parseInt(business.hours[day][openOrClose]) - 1200
       if (timeAsNumber.toString().length === 3) {
         time =
@@ -28,26 +37,11 @@ const Modal = () => {
           ':' +
           timeAsNumber.toString().substring(1, 3) +
           'pm'
-      } else
-        time =
-          timeAsNumber.toString().substring(0, 2) +
-          ':' +
-          timeAsNumber.toString().substring(2, 4) +
-          'pm'
+      } else time = convertFourDigitsToTime(timeAsNumber.toString()) + 'pm'
     } else if (business.hours[day][openOrClose] < 1200) {
-      time =
-        business.hours[day][openOrClose].substring(1, 2) +
-        ':' +
-        business.hours[day][openOrClose].substring(2, 4) +
-        'am'
-    } else if (business.hours[day][openOrClose] === '0000') {
-      return 'N/A'
+      time = convertFourDigitsToTime(business.hours[day][openOrClose]) + 'am'
     } else {
-      time =
-        business.hours[day][openOrClose].substring(0, 2) +
-        ':' +
-        business.hours[day][openOrClose].substring(2, 4) +
-        'pm'
+      time = convertFourDigitsToTime(business.hours[day][openOrClose]) + 'pm'
     }
     return time
   }
