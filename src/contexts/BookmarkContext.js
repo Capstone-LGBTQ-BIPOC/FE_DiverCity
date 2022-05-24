@@ -11,7 +11,7 @@ const BookmarkContextProvider = ({ children }) => {
   const updateBookmark = (id) => {
     if (!bookmarks.find(bm => bm.id === id)) {
       const businessToBookmark = biz.businesses.find(business => business.id === id);
-      !businessToBookmark.isSaved ? businessToBookmark.isSaved = true : businessToBookmark.isSaved = false;
+      businessToBookmark.isSaved = true;
       
       const newBookmarks = [...bookmarks, businessToBookmark].filter(biz => biz.isSaved);
       setBookmarks(newBookmarks)
