@@ -9,6 +9,7 @@ const Modal = () => {
   let time
   let recommendations
   let location
+  let contact
 
   const [business, setBusiness] = useState('')
   const [recos, setRecos] = useState([])
@@ -33,6 +34,13 @@ const Modal = () => {
   } else {
     location = 'N/A'
   }
+
+  if(business.phone_number) {
+    contact = business.phone_number
+  } else {
+    contact = 'N/A'
+  }
+
 
   const convertFourDigitsToTime = inputTime => {
     return inputTime.substring(0, 2) + ':' + inputTime.substring(2, 4)
@@ -117,7 +125,7 @@ const Modal = () => {
           <h3>Location: {location}</h3>
           <h3>Hours:</h3>
           {hoursDisplay}
-          <h3>Contact: {business.phone_number}</h3>
+          <h3>Contact: {contact}</h3>
           <a href={business.url} target='_blank'>
             Visit Website
           </a>
