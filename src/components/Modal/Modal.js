@@ -61,6 +61,7 @@ const Modal = () => {
     })
   }
 
+
   return (
     <div>
       <button onClick={() => navigate(-1)}>Go Back</button>
