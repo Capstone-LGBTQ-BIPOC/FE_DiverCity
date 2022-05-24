@@ -9,19 +9,20 @@ const BookmarkContextProvider = ({ children }) => {
   const biz = useContext(BusinessContext)
 
   const updateBookmark = (id) => {
-    const updatedBusiness = biz.businesses.filter(business => {
-      if (business.id === id) {
-        business.isSaved = !business.isSaved
-        return business
-      }
-    })
-    setBookmarks([...bookmarks, ...updatedBusiness])
+    if (!bookmarks.find(bm => bm.id === id)) {
+      const businessToBookmark = biz.businesses.find(business => business.id === id);
+      businessToBookmark.isSaved = true;
+      
+      const newBookmarks = [...bookmarks, businessToBookmark].filter(biz => biz.isSaved);
+      setBookmarks(newBookmarks)
+    } else {
+      const newBookmarks = bookmarks.filter(bm => bm.id !== id);
+      setBookmarks(newBookmarks);
+    }
   }
 
   return (
-    <BookmarkContext.Provider
-      value={{bookmarks, updateBookmark}}
-    >
+    <BookmarkContext.Provider value={{bookmarks, updateBookmark}}>
       {children}
     </BookmarkContext.Provider>
   )
