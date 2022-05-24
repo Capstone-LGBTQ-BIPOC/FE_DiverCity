@@ -52,16 +52,16 @@ describe('listings view', () => {
       .should('contain', 'Sandwiches')
   })
 
-  // it('should only display businesses for a specific sub category after it is selected', () => {
-  //   cy.get('.category-card:first button').click()
-  //    .url('http://localhost:3000/food')
-  //   cy.get('select').select('American (New)')
-  //     .get('.business-card:first')
-  //     .should('contain', 'Jelly')
-  //   cy.get('select').select('Caribbean')
-  //     .get('.business-card:first')
-  //     .should('contain', 'Jamaican Grill')
-  // })
+  it('should only display businesses for a specific sub category after it is selected', () => {
+    cy.get('.category-button:first').click()
+     .url('http://localhost:3000/food')
+    cy.get('select').select('American (New)')
+      .get('div')
+      .should('contain', 'Jelly')
+    cy.get('select').select('Caribbean')
+      .get('div')
+      .should('contain', 'Jamaican Grill')
+  })
 
   // it('should display information for a single business', () => {
   //   cy.get('button').eq(3).click()
