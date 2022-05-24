@@ -25,7 +25,7 @@ describe('listings view', () => {
     cy.get('form input')
       .type('Dener')
       .get('.submit-button').click()
-    cy.get('.category-card:first button').click()
+    cy.get('.category-button:first').click()
       .url('http://localhost:3000/food')
       .get('h3')
       .should('contain', 'No results for your search. Please check your spelling and try a new search.')
