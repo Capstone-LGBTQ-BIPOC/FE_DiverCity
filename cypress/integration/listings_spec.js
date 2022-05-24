@@ -21,16 +21,6 @@ describe('listings view', () => {
       .and('have.descendants', 'button')
   })
 
-  it('should display an error message if the city entered is misspelled', () => {
-    cy.get('form input')
-      .type('Dener')
-      .get('.submit-button').click()
-    cy.get('.category-button:first').click()
-      .url('http://localhost:3000/food')
-      .get('h3')
-      .should('contain', 'No results for your search. Please check your spelling and try a new search.')
-  })
-
   it('should change the url when viewing a listings page', () => {
     cy.get('.category-button:first').click()
       .url('http://localhost:3000/food')
@@ -67,7 +57,7 @@ describe('listings view', () => {
     cy.get('button').eq(8).click()
       .url('http://localhost:3000/shopping')
     cy.get('button')
-      .should('contain', 'Learn More').eq(2).click()
+      .should('contain', 'Learn More').eq(7).click()
     cy.url('http://localhost:3000/biz/dKf_zc_gvlQJRXXZNkUNng')
       .get('h2')
       .should('contain', 'Stanley Marketplace')
@@ -86,9 +76,9 @@ describe('listings view', () => {
       .url('https://www.yelp.com/biz/stanley-marketplace-aurora?adjust_creative=us0-GXhQzuMv9uLzOEXxpw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=us0-GXhQzuMv9uLzOEXxpw')
   })
 
-  // it('should change the url when viewing a business detail page', () => {
-  //   cy.get('button').eq(3).click()
-  //     .get('.listings-container button:first').click()
-  //     .url('http://localhost:3000/biz/dKf_zc_gvlQJRXXZNkUNng')
-  // })
+  it('should change the url when viewing a business detail page', () => {
+    cy.get('button').eq(8).click()
+      .get('.listings-container button:first').click()
+      .url('http://localhost:3000/biz/dKf_zc_gvlQJRXXZNkUNng')
+  })
 })
