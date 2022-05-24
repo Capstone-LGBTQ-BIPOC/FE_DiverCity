@@ -21,9 +21,9 @@ const Form = () => {
 
   return (
     <div>
-      {!location.selectedLocation && (
+      {/* {!location.selectedLocation && (
         <h2>You're currently searching in {location.location.city}</h2>
-      )}
+      )} */}
       {location.selectedLocation && (
         <h2>You're currently searching in {location.selectedLocation}</h2>
       )}
@@ -45,15 +45,6 @@ const Form = () => {
           className='submit-button'
         >
           SUBMIT
-        </button>
-        <button
-          onClick={event => {
-            event.preventDefault()
-            location.setSelectedLocation('')
-          }}
-          className='curr-location-button'
-        >
-          Use Current Location
         </button>
       </form>
     </div>
