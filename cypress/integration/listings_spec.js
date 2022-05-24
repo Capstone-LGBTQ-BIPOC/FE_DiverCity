@@ -31,20 +31,10 @@ describe('listings view', () => {
       .should('contain', 'No results for your search. Please check your spelling and try a new search.')
   })
 
-  // it('should display an error message if complete gibberish is entered for the city search.', () => {
-  //   cy.get('form input')
-  //     .type('asdfasdfasdf')
-  //     .get('.submit-button').click()
-  //   cy.get('.category-card:first button').click()
-  //     .url('http://localhost:3000/food')
-  //     .get('h3')
-  //     .should('contain', 'Oops, something went wrong! Please try again later.')
-  // })
-
-  // it('should change the url when viewing a listings page', () => {
-  //   cy.get('.category-card:first button').click()
-  //     .url('http://localhost:3000/food')
-  // })
+  it('should change the url when viewing a listings page', () => {
+    cy.get('.category-button:first').click()
+      .url('http://localhost:3000/food')
+  })
 
   // it('should display sub menu if Show All is clicked', () => {
   //   cy.get('.category-card:first button').click()
