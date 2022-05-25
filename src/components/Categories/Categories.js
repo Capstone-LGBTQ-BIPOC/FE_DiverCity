@@ -10,7 +10,7 @@ import {
 const Categories = () => {
   return (
     <div>
-      <h2>Pick your category</h2>
+      <h2 className='category-header'>Pick your category</h2>
       <section className='categories-container'>
         <CategoryCard icon={faUtensils} type='food' label='Food & Drink' />
         <CategoryCard icon={faBagShopping} type='shopping' label='Shopping' />

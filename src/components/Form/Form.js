@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext, useState } from 'react'
 import { LocationContext } from '../../contexts/LocationContext'
+import './Form.css'
 
 const Form = () => {
   const location = useContext(LocationContext)
@@ -20,7 +21,7 @@ const Form = () => {
   }
 
   return (
-    <div>
+    <div className='form-container'>
       {location.selectedLocation && (<h2>You're currently searching in {location.selectedLocation}</h2>)}
       <div>
        <form>
