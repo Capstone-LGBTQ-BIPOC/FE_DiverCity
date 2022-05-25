@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BusinessContext } from '../../contexts/BusinessContext';
 import { NavLink } from 'react-router-dom';
@@ -18,3 +19,9 @@ const CategoryCard = ({ icon, type, label }) => {
 }
 
 export default CategoryCard;
+
+CategoryCard.propTypes = {
+  icon: PropTypes.string,
+  type: PropTypes.string,
+  label: PropTypes.string
+}
