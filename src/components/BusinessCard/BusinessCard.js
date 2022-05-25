@@ -7,7 +7,7 @@ const BusinessCard = ({ name, image, id }) => {
   const bookmark = useContext(BookmarkContext);
 
   return(
-    <div className='business-card'>
+    <div className='business-card' id={id}>
       <img src={image} alt={`${name}`}/>
       <p>{name}</p>
       <Link to={`/biz/${id}`}>
