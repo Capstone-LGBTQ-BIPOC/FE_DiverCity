@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { fetchBusiness, fetchRecommendations } from '../../apiCalls'
 import { useParams, useNavigate } from 'react-router-dom'
-import { cleanData, convertFourDigitsToTime, convertThreeDigitsToTime } from '../../utils'
+import { cleanData, convertTime } from '../../utils'
 
 const Modal = () => {
   const { id } = useParams()
   let navigate = useNavigate()
   let hoursDisplay = 'N/A'
-  let time
 
   const [business, setBusiness] = useState('')
   const [recos, setRecos] = useState([])
@@ -26,40 +25,11 @@ const Modal = () => {
 
   let url = business.url ? <a href={business.url} target='_blank'>Yelp Business Page</a> : 'No website available'
 
-  const convertTime = (openOrClose, day) => {
-
-    if (business.hours[day][openOrClose] === 2400) {
-      const timeAsNumber = parseInt(business.hours[day][openOrClose]) - 1200
-      time = convertFourDigitsToTime(timeAsNumber.toString()) + 'am'
-    } else if (business.hours[day][openOrClose] === '0000') {
-      return 'N/A'
-    } else if (business.hours[day][openOrClose] >= 1300) {
-      const timeAsNumber = parseInt(business.hours[day][openOrClose]) - 1200
-
-      if (timeAsNumber.toString().length === 3) {
-        time = convertThreeDigitsToTime(timeAsNumber) + 'pm'
-      } else time = convertFourDigitsToTime(timeAsNumber.toString()) + 'pm'
-
-    } else if (business.hours[day][openOrClose] < 1200) {
-
-      if(business.hours[day][openOrClose][0] === '0') {
-        const singleDigitTime = business.hours[day][openOrClose].slice(1)
-        time = convertThreeDigitsToTime(singleDigitTime) + 'am'
-      } else {
-        time = convertFourDigitsToTime(business.hours[day][openOrClose]) + 'am'
-      }
-
-    } else {
-      time = convertFourDigitsToTime(business.hours[day][openOrClose]) + 'pm'
-    }
-    return time
-  }
-
   if (business && business.hours) {
     const bizHours = Object.keys(business.hours)
     hoursDisplay = bizHours.map(day => {
-      const openTime = convertTime('open', day)
-      const closeTime = convertTime('close', day)
+      const openTime = convertTime('open', day, business)
+      const closeTime = convertTime('close', day, business)
       return (
         <div key={day}>
           <p>
