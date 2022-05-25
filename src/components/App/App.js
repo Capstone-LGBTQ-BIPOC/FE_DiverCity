@@ -20,7 +20,10 @@ const App = () => {
             <Nav />
             <NavLink to='/' style={{ textDecoration: 'none', color: 'black' }}>
               <header className='header'>
-                <h1>DiverCity: Inclusive Business Guide</h1>
+                <div className='title-holder'>
+                  <h1 className='title'>DiverCity</h1>
+                  <h2 className='tagline'>Inclusive Business Guide</h2>
+                </div>
               </header>
             </NavLink>
             <Form />
