@@ -17,7 +17,7 @@ const BusinessCard = ({ name, image, id }) => {
           <p >{name}</p>
         </div>
         <Link to={`/biz/${id}`}>
-          <button>Learn More</button>
+          <button className='learn-more-button'>Learn More</button>
         </Link>
         <button className='bookmark-button'
         onClick={() => {bookmark.updateBookmark(id)}}>{bookmark.bookmarks.find(bm => bm.id === id)? 'Un-Bookmark' : 'Bookmark'}</button>
