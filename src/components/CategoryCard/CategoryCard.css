@@ -7,7 +7,14 @@
   justify-content: center;
   align-items: center;
   border-radius: 4rem;
-    box-shadow: 0 8px 8px -4px rgb(201, 201, 201);
+  box-shadow: 0 8px 8px -4px rgb(201, 201, 201);
+  margin-right: 2px;
+    transition: margin 0.2s ease-in-out;
+    background-color: gray;
+}
+
+.category-card:hover {
+  margin-top: -3rem;
 }
 
 .category-card:nth-child(1) {
@@ -20,4 +27,8 @@
 
 .category-card:nth-child(3) {
   background-color: #77a98ec4;
+}
+
+.icon {
+  height: 3em;
 }

@@ -14,10 +14,8 @@ const CategoryCard = ({ icon, type, label }) => {
       className='category-card'
       onClick={() => biz.setCategory(label)}
     >
-      <section>
         <h1>{label}</h1>
-        <FontAwesomeIcon icon={icon} />
-      </section>
+        <FontAwesomeIcon icon={icon} className='icon fa-1x' />
     </NavLink>
   )
 }
