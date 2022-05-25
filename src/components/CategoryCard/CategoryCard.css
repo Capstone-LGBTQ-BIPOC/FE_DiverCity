@@ -1,0 +1,9 @@
+.category-card{
+  border: solid blue;
+  height: 25rem;
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

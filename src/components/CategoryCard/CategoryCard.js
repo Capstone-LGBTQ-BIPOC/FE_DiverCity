@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BusinessContext } from '../../contexts/BusinessContext';
 import { NavLink } from 'react-router-dom';
+import './CategoryCard.css'
 
 const CategoryCard = ({ icon, type, label }) => {
   const biz = useContext(BusinessContext);
