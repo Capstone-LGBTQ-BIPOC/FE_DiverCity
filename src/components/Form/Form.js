@@ -22,7 +22,7 @@ const Form = () => {
 
   return (
     <div className='form-container'>
-      {location.selectedLocation && (<h2>Currently viewing LGPTQ+ & BIPOC owned business in {location.selectedLocation}</h2>)}
+      {location.selectedLocation && (<h2>Currently viewing LGBTQ+ & BIPOC owned business in {location.selectedLocation}</h2>)}
       <div>
        <form>
           <input
