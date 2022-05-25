@@ -8,7 +8,6 @@ const Modal = () => {
   let navigate = useNavigate()
   let hoursDisplay
   let time
-  let recommendations
   let url
 
   const [business, setBusiness] = useState('')
@@ -83,18 +82,14 @@ const Modal = () => {
     hoursDisplay = 'N/A'
   }
 
-  if (!recos.length) {
-    recommendations = <p>No user recommendations yet.</p>
-  } else {
-    recommendations = recos.map(rec => {
-      return (
-        <div key={recos.length}>
-          <p>User: {rec.attributes.user}</p>
-          <p>Recommendation: {rec.attributes.recommendation}</p>
-        </div>
-      )
-    })
-  }
+  const recommendations = recos.map(rec => {
+    return (
+      <div key={recos.length}>
+        <p>User: {rec.attributes.user}</p>
+        <p>Recommendation: {rec.attributes.recommendation}</p>
+      </div>
+    )
+  })
 
   return (
     <div>
@@ -112,7 +107,7 @@ const Modal = () => {
           <p>Hours:</p>
           {hoursDisplay}
           <h2>Recommendations</h2>
-          {recommendations}
+          {!recos.length ? <p>No user recommendations yet.</p> : recommendations}
         </>
       )}
       {recosError && <p>{recosError}</p>}
