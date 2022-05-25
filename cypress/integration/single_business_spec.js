@@ -53,3 +53,4 @@ describe('Going back functionality', () => {
       .should('contain', 'Go Back').click()
     cy.url('http://localhost:3000/food')
   })
+})
