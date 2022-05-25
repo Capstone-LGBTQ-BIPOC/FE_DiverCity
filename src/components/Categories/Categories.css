@@ -1,7 +1,7 @@
 .categories-container{
-  /* border: solid yellow; */
   display: flex;
   justify-content: space-around;
+  margin: 4rem;
 }
 
 .category-header{
