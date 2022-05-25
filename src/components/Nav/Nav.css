@@ -1,5 +1,5 @@
 .navigation{
-  border: solid purple;
+  /* border: solid purple; */
   display: flex;
   flex-direction: row-reverse;
 }
