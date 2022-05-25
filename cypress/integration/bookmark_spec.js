@@ -23,7 +23,7 @@ describe('Bookmark functionality', () => {
   it('should let you view your bookmarks', () => {
     cy.get('button').eq(1).click()
       .url('http://localhost:3000/food')
-      .get('button').eq(7).click()
+    cy.get('div[id="5G2X2q9p7QFdm-LbyutltQ"] button:last').click()
       .get('button').eq(4).click()
     cy.url('http://localhost:3000/bookmarks')
       .get('.bookmarks-container')

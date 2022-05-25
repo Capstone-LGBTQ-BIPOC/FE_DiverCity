@@ -1,6 +1,5 @@
 describe('Error handling', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://www.geoplugin.net/json.gp', { fixture: 'sampleGeoData.json' }).as('location data')
     cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/businesses?location=Denver&category=food', { fixture: 'sampleFoodData.json' }).as('food results')
     cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/businesses?location=asdfasdfasdf&category=food', { forceNetworkError: true }).as('nonexistent city')
     cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/businesses?location=Dener&category=food', { fixture: 'noResults.json' }).as('no results')

@@ -1,6 +1,5 @@
 describe('DiverCity homepage flow', () => {
   beforeEach(() => {
-    cy.intercept('GET', 'http://www.geoplugin.net/json.gp', { fixture: 'sampleGeoData.json' }).as('location data')
     cy.visit('http://localhost:3000')
   })
 
