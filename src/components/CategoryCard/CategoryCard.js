@@ -1,21 +1,25 @@
-import { useContext } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { BusinessContext } from '../../contexts/BusinessContext';
-import { NavLink } from 'react-router-dom';
+import { useContext } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { BusinessContext } from '../../contexts/BusinessContext'
+import { NavLink } from 'react-router-dom'
 import './CategoryCard.css'
 
 const CategoryCard = ({ icon, type, label }) => {
-  const biz = useContext(BusinessContext);
-  
+  const biz = useContext(BusinessContext)
+
   return (
-    <section className='category-card'>
-      <h1>{label}</h1>
-      <FontAwesomeIcon icon={icon} />
-      <NavLink to={`/${type}`}>
-        <button className='category-button' onClick={() => biz.setCategory(label)}>View All</button>
-      </NavLink>
-    </section>
+    <NavLink
+      to={`/${type}`}
+      style={{ textDecoration: 'none', color: 'black' }}
+      className='category-card'
+      onClick={() => biz.setCategory(label)}
+    >
+      <section>
+        <h1>{label}</h1>
+        <FontAwesomeIcon icon={icon} />
+      </section>
+    </NavLink>
   )
 }
 
-export default CategoryCard;
+export default CategoryCard
