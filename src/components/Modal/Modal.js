@@ -6,7 +6,7 @@ import { cleanData, convertFourDigitsToTime, convertThreeDigitsToTime } from '..
 const Modal = () => {
   const { id } = useParams()
   let navigate = useNavigate()
-  let hoursDisplay
+  let hoursDisplay = 'N/A'
   let time
 
   const [business, setBusiness] = useState('')
@@ -68,8 +68,6 @@ const Modal = () => {
         </div>
       )
     })
-  } else {
-    hoursDisplay = 'N/A'
   }
 
   const recommendations = recos.map(rec => {
