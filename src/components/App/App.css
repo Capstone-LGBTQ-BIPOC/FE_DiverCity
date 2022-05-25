@@ -39,8 +39,12 @@
 
 .header{
   border: solid red;
-  height: 30rem;
+  height: 20rem;
   width: 100%;
   text-align: center;
   background-image: url('../../Images/header-image.jpg');
+  background-size: cover;
+  color: black;
+  margin-bottom: 1rem;
 }
+
