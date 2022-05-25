@@ -21,7 +21,7 @@ const CategoryCard = ({ icon, type, label }) => {
 export default CategoryCard;
 
 CategoryCard.propTypes = {
-  icon: PropTypes.string,
+  icon: PropTypes.object,
   type: PropTypes.string,
   label: PropTypes.string
 }
