@@ -1,0 +1,9 @@
+.navigation{
+  border: solid purple;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.nav-button {
+  margin: .5rem;
+}
