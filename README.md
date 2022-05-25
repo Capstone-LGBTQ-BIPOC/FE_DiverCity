@@ -47,11 +47,15 @@ The categories available for a user to search are Food & Drink, Shopping, and Ar
 ---
 
 ### Project Challenges
-<!-- Short description. -->
-<!-- Possible topics: time formatting, geoplugin package, async work or working with a backend team, duplicate bookmarks, finding an API that met our needs. -->
+- Finding an API meeting the needs for verified LGBQT+ & BIPOC owned businesses
+- Asynchronously working with a combined frontend and backend team 
+- Learning and integrating Context API with React Hooks in a blended team
+- Pivotting from utilizing geoplugin package 
 
 ### Project Wins
-<!-- List here. -->
+- Utilizing Agile methodology 
+- Implementing Continuous Integration (CircleCI)
+- Successfully communicating progress throughout wins and challenges
 
 ### Technologies Used
 - JavaScript
