@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.header{
+  border: solid red;
+  height: 30rem;
+  width: 100%;
+  text-align: center;
+  background-image: url('../../Images/header-image.jpg');
+}

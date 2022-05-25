@@ -17,12 +17,12 @@ const App = () => {
       <BusinessContextProvider>
         <BookmarkContextProvider>
           <main>
-            <header>
+            <header className="header">
               <NavLink to="/">
                 <h1>DiverCity: Inclusive Business Guide</h1>
               </NavLink>
-              <Nav />
             </header>
+              <Nav />
             <Form />
             <Routes>
               <Route exact path="/" element={<Categories />} />
