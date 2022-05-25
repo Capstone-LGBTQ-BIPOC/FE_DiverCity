@@ -1,0 +1,12 @@
+.biz-container {
+  display: flex;
+}
+
+.back-btn {
+  border-radius: 5rem;
+  height: 2.1rem;
+  background-color: #77a98e;
+  color: black;
+  cursor: pointer;
+}
+

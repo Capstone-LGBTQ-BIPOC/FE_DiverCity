@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { fetchBusiness, fetchRecommendations } from '../../apiCalls'
 import { useParams, useNavigate } from 'react-router-dom'
 import { cleanData, convertTime } from '../../utils'
+import './Modal.css'
 
 const Modal = () => {
   const { id } = useParams()
@@ -54,19 +55,21 @@ const Modal = () => {
       <button onClick={() => navigate(-1)}>Go Back</button>
       {error && <p>{error}</p>}
       {business && (
-        <>
+        <div className='biz-container'>
           <img src={business.image} />
-          <h2>{business.name}</h2>
-          <h3>{business.category}</h3>
-          <h3>Phone: {business.phone_number}</h3>
-          <h3>Website: {url}</h3>
-          <h3>Location & Hours</h3>
-          <p>Location: {business.location}</p>
-          <p>Hours:</p>
-          {hoursDisplay}
-          <h2>Recommendations</h2>
-          {!recos.length ? <p>No user recommendations yet.</p> : recommendations}
-        </>
+          <div className='biz-details'>
+            <h2>{business.name}</h2>
+            <h3>{business.category}</h3>
+            <h3>Phone: {business.phone_number}</h3>
+            <h3>Website: {url}</h3>
+            <h3>Location & Hours</h3>
+            <p>Location: {business.location}</p>
+            <p>Hours:</p>
+            {hoursDisplay}
+            <h2>Recommendations</h2>
+            {!recos.length ? <p>No user recommendations yet.</p> : recommendations}
+          </div>
+        </div>
       )}
       {recosError && <p>{recosError}</p>}
     </div>
