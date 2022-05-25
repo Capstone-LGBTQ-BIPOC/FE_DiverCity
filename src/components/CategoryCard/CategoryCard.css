@@ -1,9 +1,23 @@
-.category-card{
-  border: solid blue;
-  height: 25rem;
-  width: 15rem;
+.category-card {
+  /* border: solid blue; */
+  height: 20rem;
+  width: 20rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 4rem;
+    box-shadow: 0 8px 8px -4px rgb(201, 201, 201);
+}
+
+.category-card:nth-child(1) {
+  background-color: #d87b71;
+}
+
+.category-card:nth-child(2) {
+  background-color: #faa82bb8;
+}
+
+.category-card:nth-child(3) {
+  background-color: #77a98ec4;
 }

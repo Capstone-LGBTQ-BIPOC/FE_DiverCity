@@ -1,5 +1,5 @@
 .categories-container{
-  border: solid yellow;
+  /* border: solid yellow; */
   display: flex;
   justify-content: space-around;
 }
