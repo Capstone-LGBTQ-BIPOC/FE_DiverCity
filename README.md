@@ -55,7 +55,8 @@ The categories available for a user to search are Food & Drink, Shopping, and Ar
 ### Project Wins
 - Utilizing Agile methodology 
 - Implementing Continuous Integration (CircleCI)
-- Successfully communicating progress throughout wins and challenges
+- Successfully communicating progress, including wins and challenges
+<!--Pair programming when needed-->
 
 ### Technologies Used
 - JavaScript
