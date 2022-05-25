@@ -22,9 +22,6 @@ describe('DiverCity homepage flow', () => {
       .get('button')
       .should('have.class', 'submit-button')
       .and('contain', 'SUBMIT')
-      .get('button')
-      .should('have.class', 'curr-location-button')
-      .and('contain', 'Use Current Location')
       .get('h2')
       .contains('Pick your category')
       .get('h1').contains('Food & Drink')
@@ -35,7 +32,7 @@ describe('DiverCity homepage flow', () => {
 
   it('should indicate the city you are currently searching', () => {
     cy.get('h2')
-      .contains('You\'re currently searching in Cedar Rapids')
+      .contains('You\'re currently searching in Atlanta')
   })
 
   it('should contain a form to select a new search location', () => {
@@ -44,16 +41,5 @@ describe('DiverCity homepage flow', () => {
       .get('.submit-button').click()
       .get('h2')
       .contains('You\'re currently searching in Denver')
-  })
-
-  it('should allow you to change the city back to your current location', () => {
-    cy.get('form input')
-      .type('Denver')
-      .get('.submit-button').click()
-      .get('h2')
-      .contains('You\'re currently searching in Denver')
-      .get('.curr-location-button').click()
-      .get('h2')
-      .contains('You\'re currently searching in Cedar Rapids')
   })
 })
