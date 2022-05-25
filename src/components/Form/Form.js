@@ -22,10 +22,11 @@ const Form = () => {
 
   return (
     <div className='form-container'>
-      {location.selectedLocation && (<h2>You're currently searching in {location.selectedLocation}</h2>)}
+      {location.selectedLocation && (<h2>Currently viewing LGPTQ+ & BIPOC owned business in {location.selectedLocation}</h2>)}
       <div>
        <form>
-         <input
+          <input
+            className='city-input'
           type='text'
           placeholder='Enter a City'
           name='typed'
