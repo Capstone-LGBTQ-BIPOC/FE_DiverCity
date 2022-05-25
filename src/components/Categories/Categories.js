@@ -1,16 +1,26 @@
-import * as React from 'react';
-import CategoryCard from '../CategoryCard/CategoryCard';
-import './Categories.css';
-import { faUtensils, faBagShopping, faMusic } from '@fortawesome/free-solid-svg-icons'
+import * as React from 'react'
+import CategoryCard from '../CategoryCard/CategoryCard'
+import './Categories.css'
+import {
+  faUtensils,
+  faBagShopping,
+  faMusic
+} from '@fortawesome/free-solid-svg-icons'
 
 const Categories = () => {
   return (
-    <section className='categories-container'>
+    <div>
       <h2>Pick your category</h2>
-      <CategoryCard icon={faUtensils} type='food' label='Food & Drink'/>
-      <CategoryCard icon={faBagShopping} type='shopping' label='Shopping' />
-      <CategoryCard icon={faMusic} type='entertainment' label='Arts & Entertainment' />
-    </section>
+      <section className='categories-container'>
+        <CategoryCard icon={faUtensils} type='food' label='Food & Drink' />
+        <CategoryCard icon={faBagShopping} type='shopping' label='Shopping' />
+        <CategoryCard
+          icon={faMusic}
+          type='entertainment'
+          label='Arts & Entertainment'
+        />
+      </section>
+    </div>
   )
 }
 
