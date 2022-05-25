@@ -8,7 +8,6 @@ const Modal = () => {
   let navigate = useNavigate()
   let hoursDisplay
   let time
-  let url
 
   const [business, setBusiness] = useState('')
   const [recos, setRecos] = useState([])
@@ -18,23 +17,14 @@ const Modal = () => {
   useEffect(() => {
     fetchBusiness(id)
       .then(data => setBusiness(cleanData(data.data.attributes)))
-      .catch(err =>
-        setError('Oops, something went wrong! Please try again later.')
-      )
+      .catch(err => setError('Oops, something went wrong! Please try again later.'))
 
     fetchRecommendations(id)
       .then(data => setRecos(data.data))
-      .catch(err =>
-        setRecosError('Oops, something went wrong! Please try again later.'))
+      .catch(err => setRecosError('Oops, something went wrong! Please try again later.'))
   }, [])
 
-  if (business.url) {
-    url = <a href={business.url} target='_blank'>
-      Yelp Business Page
-    </a>
-  } else {
-    url = 'No website available'
-  }
+  let url = business.url ? <a href={business.url} target='_blank'>Yelp Business Page</a> : 'No website available'
 
   const convertTime = (openOrClose, day) => {
 
