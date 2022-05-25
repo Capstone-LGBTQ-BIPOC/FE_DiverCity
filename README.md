@@ -50,10 +50,19 @@ Read the specs: [Project Specs](https://mod4.turing.edu/projects/capstone/)
 <!-- List here. -->
 
 ### Technologies Used
+- JavaScript
 - React
 - React Hooks
-- JavaScript
 - React Router
+- Context API
+- PropTypes
+- CSS
+- HTML
+- Cypress
+- Circle CI
+- Heroku
+- VS Code
+- Atom
 
 #### Future Additions & Improvements
 <!-- List here. -->
