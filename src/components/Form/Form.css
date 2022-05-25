@@ -1,12 +1,10 @@
 .form-container {
-  /* border: solid green; */
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .city-input {
-  /* border: 1px solid black; */
   width: 12rem;
   height: 2.2rem;
   padding-right: 50px;
