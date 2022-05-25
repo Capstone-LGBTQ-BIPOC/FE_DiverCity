@@ -44,7 +44,7 @@ const Modal = () => {
 
   if(business.url) {
     url = <a href={business.url} target='_blank'>
-      Visit Website
+      Yelp Business Page
     </a>
   } else {
     url = 'No website available'
@@ -127,14 +127,15 @@ const Modal = () => {
       {error && <p>{error}</p>}
       {business && (
         <>
-          <h2>{business.name}</h2>
           <img src={business.image} />
+          <h2>{business.name}</h2>
           <h3>{business.category}</h3>
-          <h3>Location: {location}</h3>
-          <h3>Hours:</h3>
+          <h3>Phone: {contact}</h3>
+          <h3>Website: {url}</h3>
+          <h3>Location & Hours</h3>
+          <p>Location: {location}</p>
+          <p>Hours:</p>
           {hoursDisplay}
-          <h3>Contact: {contact}</h3>
-          {url}
           <h2>Recommendations</h2>
           {recommendations}
         </>
