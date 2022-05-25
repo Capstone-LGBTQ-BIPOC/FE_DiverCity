@@ -30,10 +30,10 @@ Read the specs: [Project Specs](https://mod4.turing.edu/projects/capstone/)
 ## Features
 
 **Search Location:**
-<!-- Description here. -->
+On page load, the business search location defaults to Atlanta, GA. Users can enter a new city by using the form located near the top of the page. After submission, the search results update using the new location - regardless of which page it was changed from.
 
 **Listings Page:**
-<!-- Description here. -->
+The categories available for a user to search are Food & Drink, Shopping, and Arts & Entertainment. After selecting a category, the user is directed to search results with a list of businesses to choose from. From this page a user can filter their results, see details for a specific business, or save a business to their "Want to Visit" list. 
 
 **Subcategory Filter:**
 <!-- Description here. -->
@@ -41,10 +41,14 @@ Read the specs: [Project Specs](https://mod4.turing.edu/projects/capstone/)
 **Business Detail Page:**
 <!-- Description here. -->
 
+**Bookmarking:**
+<!-- Description here. -->
+
 ---
 
 ### Project Challenges
 <!-- Short description. -->
+<!-- Possible topics: time formatting, geoplugin package, async work or working with a backend team, duplicate bookmarks, finding an API that met our needs. -->
 
 ### Project Wins
 <!-- List here. -->
