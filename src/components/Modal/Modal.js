@@ -8,8 +8,6 @@ const Modal = () => {
   let hoursDisplay
   let time
   let recommendations
-  let location
-  let contact
   let url
 
   const [business, setBusiness] = useState('')
@@ -30,16 +28,12 @@ const Modal = () => {
         setRecosError('Oops, something went wrong! Please try again later.'))
   }, [])
 
-  if(business.location) {
-    location = business.location
-  } else {
-    location = 'N/A'
+  if(!business.location) {
+    business.location = 'N/A'
   }
 
-  if(business.phone_number) {
-    contact = business.phone_number
-  } else {
-    contact = 'N/A'
+  if(!business.phone_number) {
+    business.phone_number = 'N/A'
   }
 
   if(business.url) {
@@ -130,10 +124,10 @@ const Modal = () => {
           <img src={business.image} />
           <h2>{business.name}</h2>
           <h3>{business.category}</h3>
-          <h3>Phone: {contact}</h3>
+          <h3>Phone: {business.phone_number}</h3>
           <h3>Website: {url}</h3>
           <h3>Location & Hours</h3>
-          <p>Location: {location}</p>
+          <p>Location: {business.location}</p>
           <p>Hours:</p>
           {hoursDisplay}
           <h2>Recommendations</h2>
