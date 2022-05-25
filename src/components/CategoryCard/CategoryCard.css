@@ -9,8 +9,8 @@
   border-radius: 4rem;
   box-shadow: 0 8px 8px -4px rgb(201, 201, 201);
   margin-right: 2px;
-    transition: margin 0.2s ease-in-out;
-    background-color: gray;
+  transition: margin 0.2s ease-in-out;
+  background-color: gray;
 }
 
 .category-card:hover {
@@ -22,7 +22,7 @@
 }
 
 .category-card:nth-child(2) {
-  background-color: #faa82bb8;
+  background-color: #fbc066;
 }
 
 .category-card:nth-child(3) {
