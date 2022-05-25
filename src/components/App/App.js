@@ -18,14 +18,14 @@ const App = () => {
         <BookmarkContextProvider>
           <main>
             <Nav />
-            <NavLink to='/' style={{ textDecoration: 'none', color: 'black' }}>
               <header className='header'>
+            <NavLink to='/' style={{ textDecoration: 'none', color: 'black' }}>
                 <div className='title-holder'>
                   <h1 className='title'>DiverCity</h1>
                   <h2 className='tagline'>Inclusive Business Guide</h2>
                 </div>
-              </header>
             </NavLink>
+              </header>
             <Form />
             <Routes>
               <Route exact path='/' element={<Categories />} />
