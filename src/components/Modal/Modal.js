@@ -28,11 +28,11 @@ const Modal = () => {
         setRecosError('Oops, something went wrong! Please try again later.'))
   }, [])
 
-  if(!business.location) {
+  if(business && !business.location) {
     business.location = 'N/A'
   }
 
-  if(!business.phone_number) {
+  if (business && !business.phone_number) {
     business.phone_number = 'N/A'
   }
 
@@ -100,19 +100,17 @@ const Modal = () => {
     hoursDisplay = 'N/A'
   }
 
-  if (recos) {
-    if (!recos.length) {
-      recommendations = <p>No user recommendations yet.</p>
-    } else {
-      recommendations = recos.map(rec => {
-        return (
-          <div key={recos.length}>
-            <p>User: {rec.attributes.user}</p>
-            <p>Recommendation: {rec.attributes.recommendation}</p>
-          </div>
-        )
-      })
-    }
+  if (!recos.length) {
+    recommendations = <p>No user recommendations yet.</p>
+  } else {
+    recommendations = recos.map(rec => {
+      return (
+        <div key={recos.length}>
+          <p>User: {rec.attributes.user}</p>
+          <p>Recommendation: {rec.attributes.recommendation}</p>
+        </div>
+      )
+    })
   }
 
   return (
