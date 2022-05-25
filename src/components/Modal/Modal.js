@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { fetchBusiness, fetchRecommendations } from '../../apiCalls'
 import { useParams, useNavigate } from 'react-router-dom'
+import { cleanData, convertFourDigitsToTime, convertThreeDigitsToTime } from '../../utils'
 
 const Modal = () => {
   const { id } = useParams()
@@ -17,7 +18,7 @@ const Modal = () => {
 
   useEffect(() => {
     fetchBusiness(id)
-      .then(data => setBusiness(data.data.attributes))
+      .then(data => setBusiness(cleanData(data.data.attributes)))
       .catch(err =>
         setError('Oops, something went wrong! Please try again later.')
       )
@@ -28,30 +29,12 @@ const Modal = () => {
         setRecosError('Oops, something went wrong! Please try again later.'))
   }, [])
 
-  if(business && !business.location) {
-    business.location = 'N/A'
-  }
-
-  if (business && !business.phone_number) {
-    business.phone_number = 'N/A'
-  }
-
-  if(business.url) {
+  if (business.url) {
     url = <a href={business.url} target='_blank'>
       Yelp Business Page
     </a>
   } else {
     url = 'No website available'
-  }
-
-  const convertFourDigitsToTime = inputTime => {
-    return inputTime.substring(0, 2) + ':' + inputTime.substring(2, 4)
-  }
-
-  const convertThreeDigitsToTime = inputTime => {
-    return inputTime.toString().substring(0, 1) +
-    ':' +
-    inputTime.toString().substring(1, 3)
   }
 
   const convertTime = (openOrClose, day) => {
