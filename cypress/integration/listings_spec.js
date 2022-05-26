@@ -10,8 +10,9 @@ describe('Listings view', () => {
 
   it('should display search results for the selected city with business name, image, and button', () => {
     cy.get('.category-card:first').click()
-      .get('.listings-container')
+      .get('.title-container')
       .should('contain', 'Food & Drink')
+      .get('.listings-container')
       .get('div')
       .should('contain', 'Jelly')
       .and('have.descendants', 'img')
