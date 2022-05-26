@@ -34,10 +34,10 @@
   font-weight: bold;
 }
 
-/* .category {
-  border-radius: 5rem;
-  border: solid #77a98ec4;
-} */
+.category {
+  font-style: italic;
+  color: #555;
+}
 
 .hours-container {
   background-color: #77a98ec4;
@@ -53,7 +53,7 @@
 }
 
 .rec {
-  border: 1px solid #8888;
+  border: 2px solid #8888;
   margin-bottom: 0.5em;
   padding-left: 1em;
 }
