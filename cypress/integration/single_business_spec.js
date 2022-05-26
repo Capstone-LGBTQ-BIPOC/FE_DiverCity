@@ -45,7 +45,7 @@ describe('Going back functionality', () => {
   })
 
   it('should change the url when viewing a business detail page', () => {
-    cy.get('button').eq(8).click()
+    cy.get('.category-card').eq(1).click()
       .get('.listings-container button:first').click()
       .url('http://localhost:3000/biz/dKf_zc_gvlQJRXXZNkUNng')
   })
