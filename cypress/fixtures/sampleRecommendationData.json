@@ -1,0 +1,11 @@
+{
+  "data": [
+    {
+      "id": "7",
+      "type":"user_recommendation",
+      "attributes": {
+        "recommendation":"great product",
+        "user":"Emili"}
+    }
+  ]
+}

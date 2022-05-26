@@ -1,6 +1,7 @@
 import React from 'react'
 import { useContext, useState } from 'react'
 import { LocationContext } from '../../contexts/LocationContext'
+import './Form.css'
 
 const Form = () => {
   const location = useContext(LocationContext)
@@ -20,11 +21,12 @@ const Form = () => {
   }
 
   return (
-    <div>
-      {location.selectedLocation && (<h2>You're currently searching in {location.selectedLocation}</h2>)}
+    <div className='form-container'>
+      {location.selectedLocation && (<h2 className='current-search'>Currently viewing LGBTQ+ & BIPOC owned business in {location.selectedLocation}</h2>)}
       <div>
        <form>
-         <input
+          <input
+            className='city-input'
           type='text'
           placeholder='Enter a City'
           name='typed'

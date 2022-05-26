@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import { BusinessContext } from '../../contexts/BusinessContext'
 import { LocationContext } from '../../contexts/LocationContext'
 import ReactLoading from 'react-loading'
@@ -76,3 +77,7 @@ const Listings = ({ category }) => {
 }
 
 export default Listings
+
+Listings.propTypes = {
+  category: PropTypes.string
+}

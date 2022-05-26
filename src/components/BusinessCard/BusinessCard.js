@@ -1,4 +1,5 @@
 import { React, useContext } from 'react';
+import PropTypes from 'prop-types';
 import './BusinessCard.css';
 import { Link } from 'react-router-dom';
 import { BookmarkContext } from '../../contexts/BookmarkContext';
@@ -20,3 +21,9 @@ const BusinessCard = ({ name, image, id }) => {
 }
 
 export default BusinessCard;
+
+BusinessCard.propTypes = {
+  name: PropTypes.string,
+  image: PropTypes.string,
+  id: PropTypes.string
+}

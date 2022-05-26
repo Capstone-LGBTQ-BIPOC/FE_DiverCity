@@ -1,0 +1,9 @@
+.categories-container{
+  display: flex;
+  justify-content: space-around;
+  margin: 4rem;
+}
+
+.category-header{
+  text-align: center;
+}
