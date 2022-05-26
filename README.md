@@ -6,6 +6,8 @@ Visit the deployed site here: [DiverCity Inclusive Business Guide](https://diver
 
 View wireframes on Figma: [DiverCity Wireframes](https://www.figma.com/file/SQRw2Z6wwgakXw99JE2BJE/DiverCity%3A-Inclusive-Business-Guide?node-id=0%3A1)
 
+View the backend repo: [DiverCity BE Repo](https://github.com/Capstone-LGBTQ-BIPOC/BE_DiverCity/)
+
 Read the specs: [Project Specs](https://mod4.turing.edu/projects/capstone/)
 
 ## Goals

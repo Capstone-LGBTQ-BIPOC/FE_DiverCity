@@ -61,7 +61,7 @@ const Listings = ({ category }) => {
   })
 
 
-  return(
+  return (
     <section className='listings'>
       <div className='title-container'>
         <h2>{biz.category}</h2>
