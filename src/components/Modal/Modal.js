@@ -3,7 +3,7 @@ import { fetchBusiness, fetchRecommendations } from '../../apiCalls'
 import { useParams, useNavigate } from 'react-router-dom'
 import { cleanData, convertTime } from '../../utils'
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import './Modal.css'
 
 const Modal = () => {
@@ -53,7 +53,7 @@ const Modal = () => {
   })
 
   return (
-    <div>
+    <div className='biz-main-wrapper'>
       <button onClick={() => navigate(-1)} className='back-btn'>Go Back</button>
       {error && <p>{error}</p>}
       {business && (
