@@ -1,0 +1,64 @@
+.biz-main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.biz-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.biz-container h2 {
+  font-size: 1.8em;
+  margin: 0.6em 0;
+}
+
+.back-btn {
+  border-radius: 5rem;
+  border: 3px solid #77a98e;
+  background-color: #fff;
+  height: 2.2rem;
+  color: black;
+  cursor: pointer;
+  width: 8em;
+  margin: 1em 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.category {
+  font-style: italic;
+  color: #555;
+}
+
+.hours-container {
+  background-color: #77a98ec4;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 18em;
+}
+
+.hours-container p {
+  margin: 0.5em 0;
+}
+
+.rec {
+  border: 2px solid #8888;
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+}
+
+.rec p {
+  margin: 0.5em 0;
+}
+
+.main-img {
+  height: 36em;
+  width: 36em;
+  object-fit: cover;
+  margin-left: 4em;
+}

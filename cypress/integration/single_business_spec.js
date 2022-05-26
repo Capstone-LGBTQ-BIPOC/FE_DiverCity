@@ -1,3 +1,5 @@
+import { get } from "http"
+
 describe('Going back functionality', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://immense-falls-83363.herokuapp.com/api/v1/businesses?location=Denver&category=shopping', { fixture: 'sampleShoppingData.json' }).as('shopping results')
@@ -19,10 +21,9 @@ describe('Going back functionality', () => {
       .get('img')
       .should('have.attr', 'src')
       .url('https://s3-media1.fl.yelpcdn.com/bphoto/1qGXCCIqwJHV05leOS6yXw/o.jpg')
-      .get('h3')
+      .get('p')
       .should('contain', 'Food Court')
-      .and('contain', 'Location: 2501 Dallas St, Aurora, CO 80010')
-      .and('contain', 'Hours:')
+      .and('contain', '2501 Dallas St, Aurora, CO 80010')
       .get('p')
       .should('contain', 'Monday: 7:00am - 9:00pm')
       .and('contain', 'Tuesday: 7:00am - 9:00pm')
@@ -31,16 +32,17 @@ describe('Going back functionality', () => {
       .and('contain', 'Friday: 7:00am - 10:00pm')
       .and('contain', 'Saturday: 7:00am - 10:00pm')
       .and('contain', 'Sunday: 7:00am - 9:00pm')
-      .and('contain', 'User: Emili')
-      .and('contain', 'Recommendation: great product')
+      .and('contain', 'Emili')
+      .and('contain', 'great product')
       .get('h3')
-      .should('contain', 'Contact:')
-      .and('contain', '(720) 588-9158')
+      .should('contain', 'Contact')
+      .get('p')
+      .should('contain', '(720) 588-9158')
       .get('a')
-      .should('contain', 'Visit Website')
+      .should('contain', 'Yelp Business Page')
       .should('have.attr', 'href')
       .url('https://www.yelp.com/biz/stanley-marketplace-aurora?adjust_creative=us0-GXhQzuMv9uLzOEXxpw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=us0-GXhQzuMv9uLzOEXxpw')
-      .get('h2')
+      .get('h3')
       .should('contain', 'Recommendations')
   })
 
