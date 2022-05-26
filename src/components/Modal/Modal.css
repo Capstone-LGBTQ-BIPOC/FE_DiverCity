@@ -1,6 +1,18 @@
 .biz-container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  /* border: 1px solid blue; */
+  margin-bottom: 2em;
+}
+
+/* .biz-details {
+  border: 1px solid pink;
+  width: 30em;
+} */
+
+.biz-container h2 {
+  font-size: 1.8em;
+  margin: 0.6em 0;
 }
 
 .back-btn {
@@ -33,4 +45,5 @@
   height: 36em;
   width: 36em;
   object-fit: cover;
+  margin-left: 4em;
 }

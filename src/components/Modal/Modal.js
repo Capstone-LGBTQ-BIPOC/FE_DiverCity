@@ -60,15 +60,15 @@ const Modal = () => {
         <div className='biz-container'>
           <div className='biz-details'>
             <h2>{business.name}</h2>
-            <h3 className='category'>{business.category}</h3>
-            <h3><FontAwesomeIcon icon={faPhone} /> {business.phone_number}</h3>
-            <h3>{url}</h3>
+            <p className='category'>{business.category}</p>
+            <h3>Contact</h3>
+            <p><FontAwesomeIcon icon={faPhone} /> {business.phone_number} | {url}</p>
             <h3>Location & Hours</h3>
             <p>{business.location}</p>
             <div className='hours-container'>
               {hoursDisplay}
             </div>
-            <h2>Recommendations</h2>
+            <h3>Recommendations</h3>
             {!recos.length ? <p>No user recommendations yet.</p> : recommendations}
           </div>
           <img src={business.image} className='main-img' />
