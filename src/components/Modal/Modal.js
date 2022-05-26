@@ -26,7 +26,7 @@ const Modal = () => {
       .catch(err => setRecosError('Oops, something went wrong! Please try again later.'))
   }, [])
 
-  let url = business.url ? <a href={business.url} target='_blank'>Yelp Business Page</a> : 'No website available'
+  let url = business.url ? <a href={business.url} target='_blank' rel='noreferrer'>Yelp Business Page</a> : 'No website available'
 
   if (business && business.hours) {
     const bizHours = Object.keys(business.hours)
@@ -71,7 +71,7 @@ const Modal = () => {
             <h3>Recommendations</h3>
             {!recos.length ? <p>No user recommendations yet.</p> : recommendations}
           </div>
-          <img src={business.image} className='main-img' />
+          <img src={business.image} className='main-img' alt='' />
         </div>
       )}
       {recosError && <p>{recosError}</p>}
