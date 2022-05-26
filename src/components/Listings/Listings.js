@@ -1,14 +1,12 @@
 import { useContext, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { BusinessContext } from '../../contexts/BusinessContext'
-import { LocationContext } from '../../contexts/LocationContext'
 import ReactLoading from 'react-loading'
 import BusinessCard from '../BusinessCard/BusinessCard'
 import './Listings.css'
 
 const Listings = ({ category }) => {
   const biz = useContext(BusinessContext)
-  const locationContext = useContext(LocationContext)
   let error = ''
 
   const [filter, setFilter] = useState('')
@@ -24,6 +22,14 @@ const Listings = ({ category }) => {
       subCat => !subCategories.includes(subCat) && subCategories.push(subCat)
     )
   )
+
+  useEffect(() => {
+    switch (category) {
+      case 'shopping': biz.setCategory('Shopping'); break;
+      case 'food': biz.setCategory('Food & Drink'); break;
+      case 'entertainment': biz.setCategory('Arts & Entertainment'); break;
+    }
+  }, [category])
 
   const options = subCategories.sort().map(subCat => (
     <option key={subCat} value={subCat}>
