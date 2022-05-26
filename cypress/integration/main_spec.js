@@ -4,7 +4,7 @@ describe('DiverCity homepage flow', () => {
   })
 
   it('should contain a title, business categories, and buttons on page load', () => {
-    cy.get('main')
+    cy.get('.title')
       .contains('DiverCity: Inclusive Business Guide')
       .get('nav')
       .should('have.class', 'navigation')
@@ -29,7 +29,7 @@ describe('DiverCity homepage flow', () => {
   })
 
   it('should indicate the city you are currently searching', () => {
-    cy.get('h2')
+    cy.get('.form-container')
       .contains('You\'re currently searching in Atlanta')
   })
 
@@ -37,7 +37,7 @@ describe('DiverCity homepage flow', () => {
     cy.get('form input')
       .type('Denver')
       .get('.submit-button').click()
-      .get('h2')
+      .get('.form-container')
       .contains('You\'re currently searching in Denver')
   })
 })
