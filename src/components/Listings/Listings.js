@@ -56,12 +56,15 @@ const Listings = ({ category }) => {
 
 
   return(
-    <section className='listings-container'>
-      <h2>{biz.category}</h2>
-      <select value={filter} onChange={e => setFilter(e.target.value)}>
-        <option value=''>Show All</option>
-        {options}
-      </select>
+    <section className='listings'>
+      <div className='title-container'>
+        <h2>{biz.category}</h2>
+        <select className='sub-category-option' value={filter} onChange={e => setFilter(e.target.value)}>
+          <option value=''>Show All</option>
+          {options}
+        </select>
+      </div>
+      <div className='listings-container'>
       {biz.isLoading && (
         <ReactLoading
           type='spinningBubbles'
@@ -72,6 +75,8 @@ const Listings = ({ category }) => {
       )}
       {error}
       {businessListings}
+
+      </div>
     </section>
   )
 }
