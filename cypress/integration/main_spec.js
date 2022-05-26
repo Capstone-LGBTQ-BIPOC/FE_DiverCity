@@ -26,7 +26,6 @@ describe('DiverCity homepage flow', () => {
       .get('h1').contains('Food & Drink')
       .get('h1').contains('Shopping')
       .get('h1').contains('Arts & Entertainment')
-      .get('.category-button').should('have.length', 3).and('contain', 'View All')
   })
 
   it('should indicate the city you are currently searching', () => {
