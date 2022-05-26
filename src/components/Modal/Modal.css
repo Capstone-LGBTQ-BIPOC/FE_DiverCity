@@ -25,12 +25,13 @@
   border-radius: 5rem;
   border: 2px solid #77a98e;
   background-color: #fff;
-  height: 2.1rem;
+  height: 2.2rem;
   color: black;
   cursor: pointer;
   width: 8em;
-  margin-bottom: 1em;
+  margin: 1em 0;
   font-size: 1em;
+  font-weight: bold;
 }
 
 /* .category {

@@ -11,6 +11,8 @@
   border-radius: 5rem;
   background: #eee;
   box-shadow: 0 8px 8px -4px rgb(201, 201, 201);
+  padding-left: 1em;
+  font-size: 1em;
 }
 
 .submit-button {
@@ -20,4 +22,5 @@
   background-color: #77a98e;
   color: black;
   cursor: pointer;
+  font-weight: bold;
 }
