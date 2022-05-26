@@ -3,7 +3,7 @@ import './Nav.css'
 import { BusinessContext } from '../../contexts/BusinessContext'
 import { NavLink } from 'react-router-dom'
 
-function Nav({ icon, type}) {
+function Nav() {
 	const biz = useContext(BusinessContext);
 
 	return (
