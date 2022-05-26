@@ -6,12 +6,10 @@ import BusinessCard from '../BusinessCard/BusinessCard'
 const Bookmarks = () => {
   const bookmarks = useContext(BookmarkContext)
 
-  const savedBusinesses = bookmarks.bookmarks.map(business => {
-    if (business.isSaved) {
-      return (
-        <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} id={business.id} />
-      )
-    }
+  const savedBusinesses = bookmarks.bookmarks.filter(business => business.isSaved).map(business => {
+    return (
+      <BusinessCard name={business.attributes.name} image={business.attributes.image} key={business.id} id={business.id} />
+    )
   })
 
   return (
