@@ -9,13 +9,22 @@ const BusinessCard = ({ name, image, id }) => {
 
   return(
     <div className='business-card' id={id}>
-      <img src={image} alt={`${name}`}/>
-      <p>{name}</p>
-      <Link to={`/biz/${id}`}>
-        <button>Learn More</button>
-      </Link>
-      <button className='bookmark-button'
-      onClick={() => {bookmark.updateBookmark(id)}}>{bookmark.bookmarks.find(bm => bm.id === id)? 'Un-Bookmark' : 'Bookmark'}</button>
+      <div className='business-image-container'>
+        <img className='business-image' src={image} alt={`${name}`}/>
+      </div>
+      <div className='business-info-container'>
+        <div >
+          <p className='business-name'>{name}</p>
+        </div>
+        <div className='business-card-buttons'>
+          <Link to={`/biz/${id}`}>
+            <button className='learn-more-button'>Learn More</button>
+          </Link>
+          <button className='bookmark-button'
+          onClick={() => {bookmark.updateBookmark(id)}}>{bookmark.bookmarks.find(bm => bm.id === id)? 'Un-Bookmark' : 'Bookmark'}</button>
+        </div>
+
+      </div>
     </div>
   )
 }
