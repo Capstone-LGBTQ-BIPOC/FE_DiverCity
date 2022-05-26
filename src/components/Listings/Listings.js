@@ -23,6 +23,14 @@ const Listings = ({ category }) => {
     )
   )
 
+  useEffect(() => {
+    switch (category) {
+      case 'shopping': biz.setCategory('Shopping'); break;
+      case 'food': biz.setCategory('Food & Drink'); break;
+      case 'entertainment': biz.setCategory('Arts & Entertainment'); break;
+    }
+  }, [category])
+
   const options = subCategories.sort().map(subCat => (
     <option key={subCat} value={subCat}>
       {subCat}
