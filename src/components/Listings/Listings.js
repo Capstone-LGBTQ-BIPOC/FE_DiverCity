@@ -1,14 +1,12 @@
 import { useContext, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import { BusinessContext } from '../../contexts/BusinessContext'
-import { LocationContext } from '../../contexts/LocationContext'
 import ReactLoading from 'react-loading'
 import BusinessCard from '../BusinessCard/BusinessCard'
 import './Listings.css'
 
 const Listings = ({ category }) => {
   const biz = useContext(BusinessContext)
-  const locationContext = useContext(LocationContext)
   let error = ''
 
   const [filter, setFilter] = useState('')
