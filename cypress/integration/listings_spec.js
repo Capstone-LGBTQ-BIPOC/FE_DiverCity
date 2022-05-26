@@ -9,7 +9,7 @@ describe('Listings view', () => {
   })
 
   it('should display search results for the selected city with business name, image, and button', () => {
-    cy.get('.category-button:first').click()
+    cy.get('.category-card:first').click()
       .get('.listings-container')
       .should('contain', 'Food & Drink')
       .get('div')
@@ -19,12 +19,12 @@ describe('Listings view', () => {
   })
 
   it('should change the url when viewing a listings page', () => {
-    cy.get('.category-button:first').click()
+    cy.get('.category-card:first').click()
       .url('http://localhost:3000/food')
   })
 
   it('should display sub menu if Show All is clicked', () => {
-    cy.get('.category-button:first').click()
+    cy.get('.category-card:first').click()
       .url('http://localhost:3000/food')
     cy.get('select').select('Show All')
       .get('option')
@@ -40,7 +40,7 @@ describe('Listings view', () => {
   })
 
   it('should only display businesses for a specific sub category after it is selected', () => {
-    cy.get('.category-button:first').click()
+    cy.get('.category-card:first').click()
      .url('http://localhost:3000/food')
     cy.get('select').select('American (New)')
       .get('div')

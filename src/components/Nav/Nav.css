@@ -1,0 +1,18 @@
+.navigation{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.nav-button {
+  margin: .5rem;
+  border: none;
+  background-color: inherit;
+  border-radius: 5rem;
+  height: 3rem;
+  font-size: 1rem;
+}
+
+.nav-button:hover{
+  border: solid #77a98ec4;
+  cursor: pointer;
+}

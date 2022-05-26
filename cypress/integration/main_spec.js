@@ -4,8 +4,10 @@ describe('DiverCity homepage flow', () => {
   })
 
   it('should contain a title, business categories, and buttons on page load', () => {
-    cy.get('main')
-      .contains('DiverCity: Inclusive Business Guide')
+    cy.get('.title')
+      .contains('DiverCity')
+      .get('.tagline')
+      .contains('Inclusive Business Guide')
       .get('nav')
       .should('have.class', 'navigation')
       .get('div')
@@ -26,19 +28,18 @@ describe('DiverCity homepage flow', () => {
       .get('h1').contains('Food & Drink')
       .get('h1').contains('Shopping')
       .get('h1').contains('Arts & Entertainment')
-      .get('.category-button').should('have.length', 3).and('contain', 'View All')
   })
 
   it('should indicate the city you are currently searching', () => {
-    cy.get('h2')
-      .contains('You\'re currently searching in Atlanta')
+    cy.get('.current-search')
+      .contains('Currently viewing LGBTQ+ & BIPOC owned business in Atlanta')
   })
 
   it('should contain a form to select a new search location', () => {
     cy.get('form input')
       .type('Denver')
       .get('.submit-button').click()
-      .get('h2')
-      .contains('You\'re currently searching in Denver')
+      .get('.current-search')
+      .contains('Currently viewing LGBTQ+ & BIPOC owned business in Denver')
   })
 })

@@ -36,3 +36,43 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  height: 20rem;
+  width: 100%;
+  background-image: url('../../Images/header-image.jpg');
+  background-size: 100rem 30rem;
+  color: black;
+  margin-bottom: 1rem;
+  background-position: center center;
+  background-repeat: repeat-x;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.title-holder{
+  height: 5rem;
+  background-color: #ffffffd6;
+  padding: 1.5rem 3rem 1.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+}
+
+.title{
+  font-size: 4rem;
+  margin: 0rem;
+}
+
+.tagline{
+  font-size: 2rem;
+  margin: 0rem;
+}
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
