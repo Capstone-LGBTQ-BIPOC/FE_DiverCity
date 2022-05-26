@@ -4,7 +4,7 @@ import { BusinessContext } from '../../contexts/BusinessContext'
 import { NavLink } from 'react-router-dom'
 import './Nav.css'
 
-function Nav({ icon, type}) {
+const Nav = ({ icon, type}) => {
 	const biz = useContext(BusinessContext);
 
 	return (
