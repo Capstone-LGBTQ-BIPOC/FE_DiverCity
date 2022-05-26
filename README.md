@@ -1,6 +1,6 @@
 # DiverCity: Inclusive Business Guide
 
-<!-- Short, 3-4 sentence description here. -->
+DiverCity: Inclusive Business Guide is the capstone project built during Mod 4 of Turing School of Software & Design. This application is resource for users to browse and discover LGBQT+ & BIPOC owned businesses. The frontend structure utilizes React.js framework, React Context API for global state management and Cypress for End-to-End testing automated with CircleCI.
 
 Visit the deployed site here: [DiverCity Inclusive Business Guide](https://divercity-guide.herokuapp.com/)
 
@@ -36,13 +36,13 @@ On page load, the business search location defaults to Atlanta, GA. Users can en
 The categories available for a user to search are Food & Drink, Shopping, and Arts & Entertainment. After selecting a category, the user is directed to search results with a list of businesses to choose from. From this page a user can filter their results, see details for a specific business, or save a business to their "Want to Visit" list. 
 
 **Subcategory Filter:**
-<!-- Description here. -->
+The subcategory filter is available for a user to narrow their business search on the left corner above the business listings. The user can select the subcategory dropdown and filter the businesses by the selected subcategory. The user can choose to revert the search to show all business listings by selecting show all at the top of the subcategory list.
 
 **Business Detail Page:**
-<!-- Description here. -->
+From the Listings page, the user can select the "Learn More" button. The user is directed to the Business Detail Page. From this page a user can find details for the business of their choice, including the address, phone number, business hours, Yelp listing link, and recommendations from users for the given business. From this page the user can go back to the listings page, or direct to Home or the "Want to Visit" page, where any bookmarked businesses will be listed.
 
 **Bookmarking:**
-<!-- Description here. -->
+From the Listings page, the user can select the "Bookmark" button to add the business to their Want to Visit page. Users can "Unbookmark" a business if a business has been bookmarked. Unbookmarking a business will remove the business from the Want to Visit page. From the Want to Visit page the user can navigate to Home, or any of the Listings pages for a given category.
 
 ---
 
@@ -56,7 +56,7 @@ The categories available for a user to search are Food & Drink, Shopping, and Ar
 - Utilizing Agile methodology 
 - Implementing Continuous Integration (CircleCI)
 - Successfully communicating progress, including wins and challenges
-<!--Pair programming when needed-->
+- Seemlessly incorporated ansychronous and paired programming when necessary
 
 ### Technologies Used
 - JavaScript
@@ -74,7 +74,34 @@ The categories available for a user to search are Food & Drink, Shopping, and Ar
 - Atom
 
 #### Future Additions & Improvements
-<!-- List here. -->
+- Business of the Day featured on Home Page
+- Sort businesses by distance from your location/address
+- Sign-in functionality
+- GeoPlugin Package
+- Bookmark from Business Detail Page
 
-#### Design Inspiration
-<!-- List here. -->
+#### Credits
+- Brand Image: [Macrovector](https://www.vecteezy.com/vector-art/4454727-social-diversity-people-composition)
+- Button Icons: [Font Awesome](https://fontawesome.com/icons) 
+---
+
+#### Contributors
+<table>
+    <tr>
+        <td> Emili Kaiman: <a href="https://github.com/Ekaiman">GitHub</td>
+        <td> Ali Nooner: <a href="https://github.com/AliNooner">GitHub</td>
+        <td> Ron Head: <a href="https://github.com/RonLHead">GitHub</td>
+        <td> Kim Ward: <a href="https://github.com/kmewrd">GitHub</td>
+        <td> Casey Halstead: <a href="https://github.com/chalstead16">Github</td>
+    </tr>
+ <td><img src="https://avatars.githubusercontent.com/u/93098905?v=4" alt="Emili Kaiman GitHub"
+ width="150" height="auto" /></td>
+ <td><img src="https://avatars.githubusercontent.com/u/92279624?v=4" alt="Ali Nooner GitHub"
+ width="150" height="auto" /></td>
+ <td><img src="https://avatars.githubusercontent.com/u/92322028?v=4" alt="Ron Head GitHub"
+ width="150" height="auto" /></td>
+ <td><img src="https://avatars.githubusercontent.com/u/79027364?v=4" alt="Kim Ward GitHub"
+ width="150" height="auto" /></td>
+ <td><img src="https://avatars.githubusercontent.com/u/91504411?v=4" alt="Casey Halstead GitHub"
+ width="150" height="auto" /></td>
+</table>
