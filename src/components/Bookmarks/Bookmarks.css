@@ -1,0 +1,16 @@
+.bookmarks-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.saved-businesses {
+  padding: 1%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1%;
+  align-items: center;
+  justify-items: center;
+}
