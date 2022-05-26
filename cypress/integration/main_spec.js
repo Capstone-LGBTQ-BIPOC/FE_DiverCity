@@ -32,7 +32,7 @@ describe('DiverCity homepage flow', () => {
 
   it('should indicate the city you are currently searching', () => {
     cy.get('.current-search')
-      .contains('You\'re currently searching in Atlanta')
+      .contains('Currently viewing LGBTQ+ & BIPOC owned business in Atlanta')
   })
 
   it('should contain a form to select a new search location', () => {
@@ -40,6 +40,6 @@ describe('DiverCity homepage flow', () => {
       .type('Denver')
       .get('.submit-button').click()
       .get('.current-search')
-      .contains('You\'re currently searching in Denver')
+      .contains('Currently viewing LGBTQ+ & BIPOC owned business in Denver')
   })
 })
