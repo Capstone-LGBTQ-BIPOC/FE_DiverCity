@@ -13,14 +13,17 @@ const BusinessCard = ({ name, image, id }) => {
         <img className='business-image' src={image} alt={`${name}`}/>
       </div>
       <div className='business-info-container'>
-        <div className='business-name'>
-          <p >{name}</p>
+        <div >
+          <p className='business-name'>{name}</p>
         </div>
-        <Link to={`/biz/${id}`}>
-          <button className='learn-more-button'>Learn More</button>
-        </Link>
-        <button className='bookmark-button'
-        onClick={() => {bookmark.updateBookmark(id)}}>{bookmark.bookmarks.find(bm => bm.id === id)? 'Un-Bookmark' : 'Bookmark'}</button>
+        <div className='business-card-buttons'>
+          <Link to={`/biz/${id}`}>
+            <button className='learn-more-button'>Learn More</button>
+          </Link>
+          <button className='bookmark-button'
+          onClick={() => {bookmark.updateBookmark(id)}}>{bookmark.bookmarks.find(bm => bm.id === id)? 'Un-Bookmark' : 'Bookmark'}</button>
+        </div>
+
       </div>
     </div>
   )
