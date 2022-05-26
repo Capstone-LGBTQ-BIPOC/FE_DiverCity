@@ -45,9 +45,9 @@ const Modal = () => {
 
   const recommendations = recos.map(rec => {
     return (
-      <div key={recos.length}>
-        <p>User: {rec.attributes.user}</p>
-        <p>Recommendation: {rec.attributes.recommendation}</p>
+      <div key={rec.attributes.recommendation} className='rec'>
+        <p><strong>{rec.attributes.user}: </strong></p>
+        <p>{rec.attributes.recommendation}</p>
       </div>
     )
   })

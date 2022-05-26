@@ -41,6 +41,16 @@
   margin: 0.5em 0;
 }
 
+.rec {
+  border: 1px solid #8888;
+  margin-bottom: 0.5em;
+  padding-left: 1em;
+}
+
+.rec p {
+  margin: 0.5em 0;
+}
+
 .main-img {
   height: 36em;
   width: 36em;
