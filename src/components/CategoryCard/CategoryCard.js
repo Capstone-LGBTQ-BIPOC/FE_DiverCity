@@ -4,6 +4,7 @@ import { BusinessContext } from '../../contexts/BusinessContext'
 import { NavLink } from 'react-router-dom'
 import './CategoryCard.css'
 
+
 const CategoryCard = ({ icon, type, label }) => {
   const biz = useContext(BusinessContext)
 
@@ -20,4 +21,11 @@ const CategoryCard = ({ icon, type, label }) => {
   )
 }
 
-export default CategoryCard
+
+export default CategoryCard;
+
+CategoryCard.propTypes = {
+  icon: PropTypes.object,
+  type: PropTypes.string,
+  label: PropTypes.string
+}
