@@ -38,7 +38,6 @@
 }
 
 .header {
-  /* border: solid red; */
   height: 20rem;
   width: 100%;
   background-image: url('../../Images/header-image.jpg');
@@ -53,7 +52,6 @@
 }
 
 .title-holder{
-  /* border: solid white; */
   height: 5rem;
   background-color: #ffffffd6;
   padding: 1.5rem 3rem 1.5rem 3rem;
