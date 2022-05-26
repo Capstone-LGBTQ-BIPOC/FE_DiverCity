@@ -13,6 +13,6 @@
 }
 
 .nav-button:hover{
-  border: solid #77a98ec4;
+  outline: solid #77a98ec4;
   cursor: pointer;
 }
