@@ -65,11 +65,13 @@ const Modal = () => {
             <h3>{url}</h3>
             <h3>Location & Hours</h3>
             <p>{business.location}</p>
-            {hoursDisplay}
+            <div className='hours-container'>
+              {hoursDisplay}
+            </div>
             <h2>Recommendations</h2>
             {!recos.length ? <p>No user recommendations yet.</p> : recommendations}
           </div>
-          <img src={business.image} />
+          <img src={business.image} className='main-img' />
         </div>
       )}
       {recosError && <p>{recosError}</p>}
