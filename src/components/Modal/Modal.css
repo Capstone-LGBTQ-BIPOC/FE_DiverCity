@@ -1,5 +1,6 @@
 .biz-container {
   display: flex;
+  justify-content: space-evenly;
 }
 
 .back-btn {
@@ -10,3 +11,7 @@
   cursor: pointer;
 }
 
+/* .category {
+  border-radius: 5rem;
+  border: solid #77a98ec4;
+} */
