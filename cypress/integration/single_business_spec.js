@@ -19,7 +19,7 @@ describe('Going back functionality', () => {
       .get('img')
       .should('have.attr', 'src')
       .url('https://s3-media1.fl.yelpcdn.com/bphoto/1qGXCCIqwJHV05leOS6yXw/o.jpg')
-      .get('h3')
+      .get('p')
       .should('contain', 'Food Court')
       .and('contain', '2501 Dallas St, Aurora, CO 80010')
       .get('p')
