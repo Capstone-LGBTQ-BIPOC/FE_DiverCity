@@ -1,14 +1,10 @@
-import { useState, useEffect, createContext } from 'react';
-import {getGeo} from 'geoplugin';
+import { useState, createContext } from 'react';
 
 const LocationContext = createContext(null);
 
 const LocationContextProvider = ({ children }) => {
 
-
   const [selectedLocation, setSelectedLocation] = useState('Atlanta')
-
-
 
   return (
     <LocationContext.Provider value={{ selectedLocation, setSelectedLocation}}>
